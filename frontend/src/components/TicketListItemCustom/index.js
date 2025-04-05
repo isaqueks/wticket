@@ -9,7 +9,7 @@ import Badge from "@mui/joy/Badge";
 import Box from "@mui/joy/Box";
 import Divider from "@mui/joy/Divider";
 import ListItem from "@mui/joy/ListItem";
-import ListItemAvatar from "@mui/joy/ListItemAvatar";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@mui/joy/Typography";

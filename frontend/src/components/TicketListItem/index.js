@@ -8,7 +8,7 @@ import { makeStyles } from "@mui/joy/styles";
 import { green } from "@mui/joy/colors";
 import ListItem from "@mui/joy/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@mui/joy/ListItemAvatar";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@mui/joy/Typography";
 import Avatar from "@mui/joy/Avatar";
 import Divider from "@mui/joy/Divider";

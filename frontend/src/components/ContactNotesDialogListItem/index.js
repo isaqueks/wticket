@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IconButton from '@mui/joy/IconButton';
 import ListItem from '@mui/joy/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@mui/joy/ListItemAvatar';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Avatar from '@mui/joy/Avatar';
 import Typography from '@mui/joy/Typography';
