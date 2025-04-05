@@ -1,7 +1,7 @@
 import React from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import { makeStyles } from "@mui/joy/styles";
+import Container from "@mui/joy/Container";
 
 const useStyles = makeStyles(theme => ({
 	mainContainer: {

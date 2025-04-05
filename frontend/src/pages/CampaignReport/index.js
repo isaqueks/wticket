@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@mui/joy/styles";
+import Paper from "@mui/joy/Paper";
 
 import MainContainer from "../../components/MainContainer";
 import MainHeader from "../../components/MainHeader";

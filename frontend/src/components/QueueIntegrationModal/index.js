@@ -20,8 +20,8 @@ import {
   Paper,
 } from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core/styles";
-import { green } from "@material-ui/core/colors";
+import { makeStyles } from "@mui/joy/styles";
+import { green } from "@mui/joy/colors";
 
 import { i18n } from "../../translate/i18n";
 

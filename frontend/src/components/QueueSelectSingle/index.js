@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Field } from "formik";
-import { makeStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+import { makeStyles } from "@mui/joy/styles";
+import MenuItem from "@mui/joy/MenuItem";
+import FormControl from "@mui/joy/FormControl";
+import Select from "@mui/joy/Select";
 import toastError from "../../errors/toastError";
 import api from "../../services/api";
 import { i18n } from "../../translate/i18n";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/joy/Typography";
 
 const useStyles = makeStyles(theme => ({
     formControl: {

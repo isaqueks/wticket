@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import CoreDialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import CoreDialog from '@mui/joy/Dialog';
+import DialogTitle from '@mui/joy/DialogTitle';
 
 function Dialog ({ title, modalOpen, onClose, children }) {
     const [open, setOpen] = useState(false);

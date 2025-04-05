@@ -12,7 +12,7 @@ import {
   Typography // Importar Typography do Material-UI
 } from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/joy/styles";
 
 import MainContainer from "../../components/MainContainer";
 import MainHeader from "../../components/MainHeader";

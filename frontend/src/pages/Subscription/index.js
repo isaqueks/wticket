@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/joy/styles";
 
-import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
+import Paper from "@mui/joy/Paper";
+import Button from "@mui/joy/Button";
+import Grid from '@mui/joy/Grid';
+import TextField from '@mui/joy/TextField';
 
 import SubscriptionModal from "../../components/SubscriptionModal";
 import MainHeader from "../../components/MainHeader";

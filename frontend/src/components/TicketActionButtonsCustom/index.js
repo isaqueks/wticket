@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { makeStyles, createTheme, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles, createTheme, ThemeProvider } from "@mui/joy/styles";
 import { IconButton } from "@material-ui/core";
 import { MoreVert, Replay } from "@material-ui/icons";
 
@@ -14,8 +14,8 @@ import { AuthContext } from "../../context/Auth/AuthContext";
 import { TicketsContext } from "../../context/Tickets/TicketsContext";
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import UndoRoundedIcon from '@material-ui/icons/UndoRounded';
-import Tooltip from '@material-ui/core/Tooltip';
-import { green } from '@material-ui/core/colors';
+import Tooltip from '@mui/joy/Tooltip';
+import { green } from '@mui/joy/colors';
 
 
 const useStyles = makeStyles(theme => ({

@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
 
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListSubheader from "@material-ui/core/ListSubheader";
-import Divider from "@material-ui/core/Divider";
+import ListItem from "@mui/joy/ListItem";
+import ListItemIcon from "@mui/joy/ListItemIcon";
+import ListItemText from "@mui/joy/ListItemText";
+import ListSubheader from "@mui/joy/ListSubheader";
+import Divider from "@mui/joy/Divider";
 import { Badge, Collapse, List } from "@material-ui/core";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
@@ -40,10 +40,10 @@ import api from "../services/api";
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import ToDoList from "../pages/ToDoList/";
 import toastError from "../errors/toastError";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/joy/styles";
 import { AllInclusive, AttachFile, BlurCircular, DeviceHubOutlined, Schedule } from '@material-ui/icons';
 import usePlans from "../hooks/usePlans";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/joy/Typography";
 import useVersion from "../hooks/useVersion";
 
 const useStyles = makeStyles((theme) => ({

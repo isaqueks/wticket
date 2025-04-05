@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@mui/joy/styles";
+import Paper from "@mui/joy/Paper";
 
 import { i18n } from "../../translate/i18n";
 import { Button, CircularProgress, Grid, TextField, Typography } from "@material-ui/core";

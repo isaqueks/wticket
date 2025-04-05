@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from '@material-ui/core/InputLabel';
-import TextField from "@material-ui/core/TextField";
-import Select from "@material-ui/core/Select"
-import MenuItem from "@material-ui/core/MenuItem"
+import Avatar from "@mui/joy/Avatar";
+import Button from "@mui/joy/Button";
+import CssBaseline from "@mui/joy/CssBaseline";
+import FormControl from "@mui/joy/FormControl";
+import InputLabel from '@mui/joy/InputLabel';
+import TextField from "@mui/joy/TextField";
+import Select from "@mui/joy/Select"
+import MenuItem from "@mui/joy/MenuItem"
 import StoreIcon from "@material-ui/icons/Store";
-import Grid from '@material-ui/core/Grid';
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+import Grid from '@mui/joy/Grid';
+import Typography from "@mui/joy/Typography";
+import { makeStyles } from "@mui/joy/styles";
+import Container from "@mui/joy/Container";
 
 import { i18n } from "../../translate/i18n";
 import useCompanies from '../../hooks/useCompanies';

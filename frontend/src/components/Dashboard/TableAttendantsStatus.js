@@ -1,16 +1,16 @@
 import React from "react";
 
-import Paper from "@material-ui/core/Paper";
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import Paper from "@mui/joy/Paper";
+import Table from '@mui/joy/Table';
+import TableBody from '@mui/joy/TableBody';
+import TableCell from '@mui/joy/TableCell';
+import TableContainer from '@mui/joy/TableContainer';
+import TableHead from '@mui/joy/TableHead';
+import TableRow from '@mui/joy/TableRow';
 import Skeleton from "@material-ui/lab/Skeleton";
 
-import { makeStyles } from "@material-ui/core/styles";
-import { green, red } from '@material-ui/core/colors';
+import { makeStyles } from "@mui/joy/styles";
+import { green, red } from '@mui/joy/colors';
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';

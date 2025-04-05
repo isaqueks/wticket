@@ -22,12 +22,12 @@ import {
     makeStyles,
     TextField
 } from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
+import IconButton from "@mui/joy/IconButton";
+import Typography from "@mui/joy/Typography";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 
-import { green } from "@material-ui/core/colors";
+import { green } from "@mui/joy/colors";
 
 import { i18n } from "../../translate/i18n";
 

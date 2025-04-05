@@ -1,7 +1,7 @@
 import React from "react";
 import Skeleton from "@material-ui/lab/Skeleton";
-import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
+import Typography from "@mui/joy/Typography";
+import Paper from "@mui/joy/Paper";
 import { i18n } from "../../translate/i18n";
 import { Grid } from "@material-ui/core";
 

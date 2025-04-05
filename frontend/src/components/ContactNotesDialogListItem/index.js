@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconButton from '@material-ui/core/IconButton';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@mui/joy/IconButton';
+import ListItem from '@mui/joy/ListItem';
+import ListItemText from '@mui/joy/ListItemText';
+import ListItemAvatar from '@mui/joy/ListItemAvatar';
+import ListItemSecondaryAction from '@mui/joy/ListItemSecondaryAction';
+import Avatar from '@mui/joy/Avatar';
+import Typography from '@mui/joy/Typography';
+import { makeStyles } from '@mui/joy/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import moment from 'moment';
 

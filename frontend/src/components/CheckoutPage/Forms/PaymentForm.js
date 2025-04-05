@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useReducer } from 'react';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import Grid from '@material-ui/core/Grid';
+import Button from '@mui/joy/Button';
+import Card from '@mui/joy/Card';
+import CardActions from '@mui/joy/CardActions';
+import CardContent from '@mui/joy/CardContent';
+import CardHeader from '@mui/joy/CardHeader';
+import Grid from '@mui/joy/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@mui/joy/Typography';
+import { makeStyles } from '@mui/joy/styles';
 
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from '@mui/joy/IconButton';
 import MinimizeIcon from '@material-ui/icons/Minimize';
 import AddIcon from '@material-ui/icons/Add';
 

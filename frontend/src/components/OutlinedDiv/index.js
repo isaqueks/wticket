@@ -1,6 +1,6 @@
 import React from "react";
 
-import TextField from "@material-ui/core/TextField";
+import TextField from "@mui/joy/TextField";
 
 const InputComponent = ({ inputRef, ...other }) => <div {...other} />;
 

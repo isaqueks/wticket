@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { makeStyles } from "@mui/joy/styles";
+import Button from '@mui/joy/Button';
+import Box from '@mui/joy/Box';
+import BottomNavigation from '@mui/joy/BottomNavigation';
+import BottomNavigationAction from '@mui/joy/BottomNavigationAction';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import ChatIcon from '@material-ui/icons/Chat';
 

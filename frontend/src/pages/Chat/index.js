@@ -24,7 +24,7 @@ import { SocketContext } from "../../context/Socket/SocketContext";
 import { has, isObject } from "lodash";
 
 import { AuthContext } from "../../context/Auth/AuthContext";
-import withWidth, { isWidthUp } from "@material-ui/core/withWidth";
+import withWidth, { isWidthUp } from "@mui/joy/withWidth";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {

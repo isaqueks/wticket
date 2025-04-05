@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer, useContext, useCallback } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/joy/styles";
 import api from "../../services/api";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import Board from 'react-trello';

@@ -5,9 +5,9 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/joy/styles";
 import toastError from "../../errors/toastError";
-import Popover from "@material-ui/core/Popover";
+import Popover from "@mui/joy/Popover";
 import ForumIcon from "@material-ui/icons/Forum";
 import {
   Badge,

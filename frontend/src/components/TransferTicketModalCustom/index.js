@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
-import Select from "@material-ui/core/Select";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@mui/joy/Button";
+import TextField from "@mui/joy/TextField";
+import Dialog from "@mui/joy/Dialog";
+import Select from "@mui/joy/Select";
+import FormControl from "@mui/joy/FormControl";
+import InputLabel from "@mui/joy/InputLabel";
+import MenuItem from "@mui/joy/MenuItem";
 import { Grid, ListItemText, Typography, makeStyles } from "@material-ui/core";
 
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@mui/joy/DialogActions";
+import DialogContent from "@mui/joy/DialogContent";
+import DialogTitle from "@mui/joy/DialogTitle";
 import Autocomplete, {
   createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import CircularProgress from "@mui/joy/CircularProgress";
 
 import { i18n } from "../../translate/i18n";
 import api from "../../services/api";
