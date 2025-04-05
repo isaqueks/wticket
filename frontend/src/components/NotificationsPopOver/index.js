@@ -10,7 +10,7 @@ import Popover from "@mui/joy/Popover";
 import IconButton from "@mui/joy/IconButton";
 import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
-import ListItemText from "@mui/joy/ListItemText";
+import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@mui/joy/styles";
 import Badge from "@mui/joy/Badge";
 import ChatIcon from "@material-ui/icons/Chat";

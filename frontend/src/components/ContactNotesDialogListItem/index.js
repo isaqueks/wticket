@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/joy/IconButton';
 import ListItem from '@mui/joy/ListItem';
-import ListItemText from '@mui/joy/ListItemText';
+import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@mui/joy/ListItemAvatar';
 import ListItemSecondaryAction from '@mui/joy/ListItemSecondaryAction';
 import Avatar from '@mui/joy/Avatar';

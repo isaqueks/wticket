@@ -11,7 +11,7 @@ import Divider from "@mui/joy/Divider";
 import ListItem from "@mui/joy/ListItem";
 import ListItemAvatar from "@mui/joy/ListItemAvatar";
 import ListItemSecondaryAction from "@mui/joy/ListItemSecondaryAction";
-import ListItemText from "@mui/joy/ListItemText";
+import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@mui/joy/Typography";
 import { blue, green, grey } from "@mui/joy/colors";
 import { makeStyles } from "@mui/joy/styles";

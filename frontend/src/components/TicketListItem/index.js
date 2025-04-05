@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { makeStyles } from "@mui/joy/styles";
 import { green } from "@mui/joy/colors";
 import ListItem from "@mui/joy/ListItem";
-import ListItemText from "@mui/joy/ListItemText";
+import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@mui/joy/ListItemAvatar";
 import Typography from "@mui/joy/Typography";
 import Avatar from "@mui/joy/Avatar";
