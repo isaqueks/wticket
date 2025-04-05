@@ -1,5 +1,5 @@
 import React from "react";
-import withWidth, { isWidthUp } from '@mui/joy/withWidth';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 
 import Tickets from "../TicketsCustom"
 import TicketAdvanced from "../TicketsAdvanced";
