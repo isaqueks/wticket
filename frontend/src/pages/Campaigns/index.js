@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 import Button from "@mui/joy/Button";
 import IconButton from "@mui/joy/IconButton";
-import InputAdornment from "@mui/joy/InputAdornment";
+import InputAdornment from "@material-ui/core/InputAdornment";
 import Paper from "@material-ui/core/Paper";
 import Table from "@mui/joy/Table";
 import TableBody from "@material-ui/core/TableBody";

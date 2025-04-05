@@ -3,7 +3,7 @@ import qs from "query-string";
 import IconButton from "@mui/joy/IconButton";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
-import InputAdornment from "@mui/joy/InputAdornment";
+import InputAdornment from "@material-ui/core/InputAdornment";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";

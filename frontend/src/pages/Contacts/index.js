@@ -15,7 +15,7 @@ import Avatar from "@mui/joy/Avatar";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@mui/joy/TextField";
-import InputAdornment from "@mui/joy/InputAdornment";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 import IconButton from "@mui/joy/IconButton";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";

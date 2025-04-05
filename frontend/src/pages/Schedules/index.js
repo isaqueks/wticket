@@ -5,7 +5,7 @@ import { makeStyles } from "@mui/joy/styles";
 import Paper from "@material-ui/core/Paper";
 import Button from "@mui/joy/Button";
 import TextField from "@mui/joy/TextField";
-import InputAdornment from "@mui/joy/InputAdornment";
+import InputAdornment from "@material-ui/core/InputAdornment";
 import MainContainer from "../../components/MainContainer";
 import MainHeader from "../../components/MainHeader";
 import Title from "../../components/Title";
