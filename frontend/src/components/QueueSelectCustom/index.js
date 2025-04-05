@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/joy/styles";
-import InputLabel from "@mui/joy/InputLabel";
+import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@mui/joy/MenuItem";
 import FormControl from "@mui/joy/FormControl";
 import Select from "@mui/joy/Select";

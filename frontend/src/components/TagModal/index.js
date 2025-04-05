@@ -25,7 +25,7 @@ import { IconButton, InputAdornment } from "@material-ui/core";
 import { FormControlLabel, Switch } from '@material-ui/core';
 import Select from "@mui/joy/Select";
 import MenuItem from "@mui/joy/MenuItem";
-import InputLabel from "@mui/joy/InputLabel";
+import InputLabel from "@material-ui/core/InputLabel";
 import Checkbox from '@mui/joy/Checkbox';
 
 const useStyles = makeStyles(theme => ({

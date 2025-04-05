@@ -6,7 +6,7 @@ import IconButton from "@mui/joy/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Drawer from "@mui/joy/Drawer";
 import Link from "@mui/joy/Link";
-import InputLabel from "@mui/joy/InputLabel";
+import InputLabel from "@material-ui/core/InputLabel";
 import Avatar from "@mui/joy/Avatar";
 import Button from "@mui/joy/Button";
 import Paper from "@material-ui/core/Paper";

@@ -6,7 +6,7 @@ import TextField from "@mui/joy/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import Select from "@mui/joy/Select";
 import FormControl from "@mui/joy/FormControl";
-import InputLabel from "@mui/joy/InputLabel";
+import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@mui/joy/MenuItem";
 import { Grid, ListItemText, Typography, makeStyles } from "@material-ui/core";
 

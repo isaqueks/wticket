@@ -14,7 +14,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import CircularProgress from "@mui/joy/CircularProgress";
 import Select from "@mui/joy/Select";
-import InputLabel from "@mui/joy/InputLabel";
+import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@mui/joy/MenuItem";
 import FormControl from "@mui/joy/FormControl";
 

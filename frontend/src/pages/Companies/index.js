@@ -4,7 +4,7 @@ import Avatar from "@mui/joy/Avatar";
 import Button from "@mui/joy/Button";
 import CssBaseline from "@mui/joy/CssBaseline";
 import FormControl from "@mui/joy/FormControl";
-import InputLabel from '@mui/joy/InputLabel';
+import InputLabel from '@material-ui/core/InputLabel';
 import TextField from "@mui/joy/TextField";
 import Select from "@mui/joy/Select"
 import MenuItem from "@mui/joy/MenuItem"

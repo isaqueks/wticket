@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Grid from "@mui/joy/Grid";
 import MenuItem from "@mui/joy/MenuItem";
 import FormControl from "@mui/joy/FormControl";
-import InputLabel from "@mui/joy/InputLabel";
+import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@mui/joy/Select";
 import FormHelperText from "@mui/joy/FormHelperText";
 import TextField from "@mui/joy/TextField";
