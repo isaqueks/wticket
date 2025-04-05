@@ -14,7 +14,7 @@ import { AuthContext } from "../../context/Auth/AuthContext";
 import { TicketsContext } from "../../context/Tickets/TicketsContext";
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import UndoRoundedIcon from '@material-ui/icons/UndoRounded';
-import Tooltip from '@mui/joy/Tooltip';
+import Tooltip from '@material-ui/core/Tooltip';
 import { green } from '@material-ui/core/colors';
 
 

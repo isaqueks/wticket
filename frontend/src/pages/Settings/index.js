@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import Typography from "@mui/joy/Typography";
-import Container from "@mui/joy/Container";
-import Select from "@mui/joy/Select";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+import Select from "@material-ui/core/Select";
 import { toast } from "react-toastify";
 
 import api from "../../services/api";

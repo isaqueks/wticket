@@ -4,15 +4,15 @@ import clsx from "clsx";
 import { format, isSameDay, parseISO } from "date-fns";
 import { useHistory, useParams } from "react-router-dom";
 
-import Avatar from "@mui/joy/Avatar";
-import Badge from "@mui/joy/Badge";
-import Box from "@mui/joy/Box";
-import Divider from "@mui/joy/Divider";
-import ListItem from "@mui/joy/ListItem";
+import Avatar from "@material-ui/core/Avatar";
+import Badge from "@material-ui/core/Badge";
+import Box from "@material-ui/core/Box";
+import Divider from "@material-ui/core/Divider";
+import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@mui/joy/Typography";
+import Typography from "@material-ui/core/Typography";
 import { blue, green, grey } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 

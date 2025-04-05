@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useReducer, useState } from "react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
 
-import ListItem from "@mui/joy/ListItem";
+import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListSubheader from "@mui/joy/ListSubheader";
-import Divider from "@mui/joy/Divider";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import Divider from "@material-ui/core/Divider";
 import { Badge, Collapse, List } from "@material-ui/core";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 import WhatsAppIcon from "@material-ui/icons/WhatsApp";
@@ -43,7 +43,7 @@ import toastError from "../errors/toastError";
 import { makeStyles } from "@material-ui/core/styles";
 import { AllInclusive, AttachFile, BlurCircular, DeviceHubOutlined, Schedule } from '@material-ui/icons';
 import usePlans from "../hooks/usePlans";
-import Typography from "@mui/joy/Typography";
+import Typography from "@material-ui/core/Typography";
 import useVersion from "../hooks/useVersion";
 
 const useStyles = makeStyles((theme) => ({

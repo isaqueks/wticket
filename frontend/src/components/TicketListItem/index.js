@@ -6,13 +6,13 @@ import clsx from "clsx";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
-import ListItem from "@mui/joy/ListItem";
+import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Typography from "@mui/joy/Typography";
-import Avatar from "@mui/joy/Avatar";
-import Divider from "@mui/joy/Divider";
-import Badge from "@mui/joy/Badge";
+import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import Divider from "@material-ui/core/Divider";
+import Badge from "@material-ui/core/Badge";
 
 import { i18n } from "../../translate/i18n";
 

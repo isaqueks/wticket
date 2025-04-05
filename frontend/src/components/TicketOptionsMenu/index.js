@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 
-import MenuItem from "@mui/joy/MenuItem";
-import Menu from "@mui/joy/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
 
 import { i18n } from "../../translate/i18n";
 import api from "../../services/api";

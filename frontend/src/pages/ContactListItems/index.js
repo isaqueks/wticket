@@ -10,18 +10,18 @@ import { toast } from "react-toastify";
 import { useParams, useHistory } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "@mui/joy/Table";
+import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import Button from "@mui/joy/Button";
+import Button from "@material-ui/core/Button";
 import SearchIcon from "@material-ui/icons/Search";
-import TextField from "@mui/joy/TextField";
+import TextField from "@material-ui/core/TextField";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
-import IconButton from "@mui/joy/IconButton";
+import IconButton from "@material-ui/core/IconButton";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import EditIcon from "@material-ui/icons/Edit";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";

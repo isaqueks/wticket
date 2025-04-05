@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-import Button from "@mui/joy/Button";
-import TextField from "@mui/joy/TextField";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 
 import DialogActions from "@material-ui/core/DialogActions";
@@ -11,7 +11,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Autocomplete, {
 	createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
-import CircularProgress from "@mui/joy/CircularProgress";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { i18n } from "../../translate/i18n";
 import api from "../../services/api";

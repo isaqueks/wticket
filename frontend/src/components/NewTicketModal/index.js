@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
-import Button from "@mui/joy/Button";
-import TextField from "@mui/joy/TextField";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 
 import DialogActions from "@material-ui/core/DialogActions";
@@ -10,7 +10,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Autocomplete, {
 	createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
-import CircularProgress from "@mui/joy/CircularProgress";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { i18n } from "../../translate/i18n";
 import api from "../../services/api";
@@ -21,7 +21,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import {  WhatsApp } from "@material-ui/icons";
 import { Grid, ListItemText, MenuItem, Select } from "@material-ui/core";
-import Typography from "@mui/joy/Typography";
+import Typography from "@material-ui/core/Typography";
 import { toast } from "react-toastify";
 //import ShowTicketOpen from "../ShowTicketOpenModal";
 

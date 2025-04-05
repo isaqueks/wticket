@@ -22,8 +22,8 @@ import {
     makeStyles,
     TextField
 } from "@material-ui/core";
-import IconButton from "@mui/joy/IconButton";
-import Typography from "@mui/joy/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 

@@ -5,14 +5,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
-import Tabs from "@mui/joy/Tabs";
-import Tab from "@mui/joy/Tab";
-import Badge from "@mui/joy/Badge";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import Badge from "@material-ui/core/Badge";
 import MoveToInboxIcon from "@material-ui/icons/MoveToInbox";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@mui/joy/Switch";
+import Switch from "@material-ui/core/Switch";
 
 import NewTicketModal from "../NewTicketModal";
 import TicketsList from "../TicketsListCustom";

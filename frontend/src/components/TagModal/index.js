@@ -6,13 +6,13 @@ import { toast } from "react-toastify";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
-import Button from "@mui/joy/Button";
-import TextField from "@mui/joy/TextField";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import CircularProgress from "@mui/joy/CircularProgress";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import { Colorize } from "@material-ui/icons";
 import { ColorBox } from 'material-ui-color';
 
@@ -23,10 +23,10 @@ import toastError from "../../errors/toastError";
 import { AuthContext } from "../../context/Auth/AuthContext";
 import { IconButton, InputAdornment } from "@material-ui/core";
 import { FormControlLabel, Switch } from '@material-ui/core';
-import Select from "@mui/joy/Select";
-import MenuItem from "@mui/joy/MenuItem";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
-import Checkbox from '@mui/joy/Checkbox';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles(theme => ({
 	root: {
