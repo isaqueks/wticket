@@ -7,10 +7,10 @@ import * as Yup from "yup";
 
 import Button from "@mui/joy/Button";
 import CircularProgress from "@mui/joy/CircularProgress";
-import Dialog from "@mui/joy/Dialog";
-import DialogActions from "@mui/joy/DialogActions";
-import DialogContent from "@mui/joy/DialogContent";
-import DialogTitle from "@mui/joy/DialogTitle";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
 import IconButton from "@mui/joy/IconButton";
 import TextField from "@mui/joy/TextField";
 import { green } from "@mui/joy/colors";

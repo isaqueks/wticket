@@ -3,11 +3,11 @@ import { useHistory } from "react-router-dom";
 
 import Button from "@mui/joy/Button";
 import TextField from "@mui/joy/TextField";
-import Dialog from "@mui/joy/Dialog";
+import Dialog from "@material-ui/core/Dialog";
 
-import DialogActions from "@mui/joy/DialogActions";
-import DialogContent from "@mui/joy/DialogContent";
-import DialogTitle from "@mui/joy/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
 import Autocomplete, {
 	createFilterOptions,
 } from "@material-ui/lab/Autocomplete";
