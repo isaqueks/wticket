@@ -1,5 +1,5 @@
 import React from "react";
-import TableCell from "@mui/joy/TableCell";
+import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import Skeleton from "@material-ui/lab/Skeleton";
 import { makeStyles } from "@material-ui/core";
