@@ -11,7 +11,7 @@ import Badge from "@mui/joy/Badge";
 import MoveToInboxIcon from "@material-ui/icons/MoveToInbox";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
-import FormControlLabel from "@mui/joy/FormControlLabel";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@mui/joy/Switch";
 
 import NewTicketModal from "../NewTicketModal";
