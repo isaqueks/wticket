@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { makeStyles } from "@mui/joy/styles";
 import toastError from "../../errors/toastError";
-import Popover from "@mui/joy/Popover";
+import Popover from "@material-ui/core/Popover";
 import ForumIcon from "@material-ui/icons/Forum";
 import {
   Badge,
