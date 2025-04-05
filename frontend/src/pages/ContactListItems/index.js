@@ -11,10 +11,10 @@ import { useParams, useHistory } from "react-router-dom";
 
 import { makeStyles } from "@mui/joy/styles";
 import Table from "@mui/joy/Table";
-import TableBody from "@mui/joy/TableBody";
-import TableCell from "@mui/joy/TableCell";
-import TableHead from "@mui/joy/TableHead";
-import TableRow from "@mui/joy/TableRow";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
 import Paper from "@mui/joy/Paper";
 import Button from "@mui/joy/Button";
 import SearchIcon from "@material-ui/icons/Search";

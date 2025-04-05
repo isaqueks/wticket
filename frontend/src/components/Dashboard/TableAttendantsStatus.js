@@ -2,11 +2,11 @@ import React from "react";
 
 import Paper from "@mui/joy/Paper";
 import Table from '@mui/joy/Table';
-import TableBody from '@mui/joy/TableBody';
-import TableCell from '@mui/joy/TableCell';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@mui/joy/TableContainer';
-import TableHead from '@mui/joy/TableHead';
-import TableRow from '@mui/joy/TableRow';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import Skeleton from "@material-ui/lab/Skeleton";
 
 import { makeStyles } from "@mui/joy/styles";
