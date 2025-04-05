@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-import Button from "@mui/joy/Button";
+import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@mui/joy/TextField";
+import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid"; 
 import Box from "@material-ui/core/Box";
@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 		width: "100vw",
 		height: "100vh",
 		//background: "linear-gradient(to right, #76EE00 , #76EE00 , #458B00)",
-		backgroundImage: "url(https://i.imgur.com/CGby9tN.png)",
+		backgroundImage: "url(/assets/bg-1.png)",
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "100% 100%",
 		backgroundPosition: "center",
