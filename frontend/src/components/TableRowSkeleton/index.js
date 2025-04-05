@@ -1,6 +1,6 @@
 import React from "react";
 import TableCell from "@mui/joy/TableCell";
-import TableRow from "@mui/joy/TableRow";
+import TableRow from "@material-ui/core/TableRow";
 import Skeleton from "@material-ui/lab/Skeleton";
 import { makeStyles } from "@material-ui/core";
 
