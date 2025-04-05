@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { head } from "lodash";
 
 import { makeStyles } from "@mui/joy/styles";
-import { green } from "@mui/joy/colors";
+import { green } from "@material-ui/core/colors";
 import Button from "@mui/joy/Button";
 import TextField from "@mui/joy/TextField";
 import Dialog from "@material-ui/core/Dialog";

@@ -10,7 +10,7 @@ import { makeStyles } from "@mui/joy/styles";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import CircularProgress from "@mui/joy/CircularProgress";
-import { green } from "@mui/joy/colors";
+import { green } from "@material-ui/core/colors";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import IconButton from "@mui/joy/IconButton";
 import MoodIcon from "@material-ui/icons/Mood";

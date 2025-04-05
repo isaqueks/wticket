@@ -4,7 +4,7 @@ import { Avatar, Card, CardHeader, Typography } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 
 import { makeStyles } from "@mui/joy/styles";
-import { grey } from '@mui/joy/colors';
+import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
 	cardAvatar: {

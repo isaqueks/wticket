@@ -5,7 +5,7 @@ import { parseISO, format, isSameDay } from "date-fns";
 import clsx from "clsx";
 
 import { makeStyles } from "@mui/joy/styles";
-import { green } from "@mui/joy/colors";
+import { green } from "@material-ui/core/colors";
 import ListItem from "@mui/joy/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";

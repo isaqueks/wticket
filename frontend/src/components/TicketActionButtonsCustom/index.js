@@ -15,7 +15,7 @@ import { TicketsContext } from "../../context/Tickets/TicketsContext";
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import UndoRoundedIcon from '@material-ui/icons/UndoRounded';
 import Tooltip from '@mui/joy/Tooltip';
-import { green } from '@mui/joy/colors';
+import { green } from '@material-ui/core/colors';
 
 
 const useStyles = makeStyles(theme => ({

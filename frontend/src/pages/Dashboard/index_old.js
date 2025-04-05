@@ -19,7 +19,7 @@ import BlockIcon from '@material-ui/icons/Block';
 import DoneIcon from '@material-ui/icons/Done';
 
 import { makeStyles } from "@mui/joy/styles";
-import { grey, blue } from "@mui/joy/colors";
+import { grey, blue } from "@material-ui/core/colors";
 import { toast } from "react-toastify";
 
 import Chart from "./Chart";

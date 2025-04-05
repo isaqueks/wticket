@@ -31,7 +31,7 @@ import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import TimerIcon from '@material-ui/icons/Timer';
 
 import { makeStyles } from "@mui/joy/styles";
-import { grey, blue } from "@mui/joy/colors";
+import { grey, blue } from "@material-ui/core/colors";
 import { toast } from "react-toastify";
 
 import Chart from "./Chart";

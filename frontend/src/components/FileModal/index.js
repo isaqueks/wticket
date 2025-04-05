@@ -27,7 +27,7 @@ import Typography from "@mui/joy/Typography";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 
-import { green } from "@mui/joy/colors";
+import { green } from "@material-ui/core/colors";
 
 import { i18n } from "../../translate/i18n";
 

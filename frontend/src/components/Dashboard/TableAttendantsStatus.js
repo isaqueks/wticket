@@ -10,7 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Skeleton from "@material-ui/lab/Skeleton";
 
 import { makeStyles } from "@mui/joy/styles";
-import { green, red } from '@mui/joy/colors';
+import { green, red } from '@material-ui/core/colors';
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';

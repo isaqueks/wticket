@@ -13,7 +13,7 @@ import Typography from "@mui/joy/Typography";
 import useSettings from "../../hooks/useSettings";
 import { ToastContainer, toast } from 'react-toastify';
 import { makeStyles } from "@mui/joy/styles";
-import { grey, blue } from "@mui/joy/colors";
+import { grey, blue } from "@material-ui/core/colors";
 import { Tabs, Tab } from "@material-ui/core";
 
 //import 'react-toastify/dist/ReactToastify.css';

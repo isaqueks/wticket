@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { format, parseISO } from "date-fns";
 
 import { makeStyles } from "@mui/joy/styles";
-import { green } from "@mui/joy/colors";
+import { green } from "@material-ui/core/colors";
 import {
 	Button,
 	TableBody,

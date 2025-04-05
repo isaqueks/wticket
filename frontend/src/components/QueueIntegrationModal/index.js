@@ -21,7 +21,7 @@ import {
 } from "@material-ui/core";
 
 import { makeStyles } from "@mui/joy/styles";
-import { green } from "@mui/joy/colors";
+import { green } from "@material-ui/core/colors";
 
 import { i18n } from "../../translate/i18n";
 
