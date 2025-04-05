@@ -95,7 +95,6 @@ const App = () => {
     }, []);
 
     useEffect(() => {
-        alert(mode)
         window.localStorage.setItem("preferredTheme", mode);
     }, [mode]);
 
