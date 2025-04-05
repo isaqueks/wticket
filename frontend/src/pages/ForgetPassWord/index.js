@@ -15,7 +15,7 @@ import Link from "@mui/joy/Link";
 import Grid from "@mui/joy/Grid";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Container from "@mui/joy/Container";
 import api from "../../services/api";
 import { i18n } from "../../translate/i18n";

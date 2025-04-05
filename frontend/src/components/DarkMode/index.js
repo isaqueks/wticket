@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { CssBaseline, IconButton } from "@material-ui/core";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import Brightness7Icon from "@material-ui/icons/Brightness7";

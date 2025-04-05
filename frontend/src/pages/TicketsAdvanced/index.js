@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from '@mui/joy/Button';
 import Box from '@mui/joy/Box';
 import BottomNavigation from '@material-ui/core/BottomNavigation';

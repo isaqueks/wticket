@@ -3,7 +3,7 @@ import React from "react";
 import { Avatar, Card, CardHeader, Typography } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({

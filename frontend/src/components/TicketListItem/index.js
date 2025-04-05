@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { parseISO, format, isSameDay } from "date-fns";
 import clsx from "clsx";
 
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
 import ListItem from "@mui/joy/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";

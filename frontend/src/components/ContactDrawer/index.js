@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@mui/joy/Typography";
 import IconButton from "@mui/joy/IconButton";
 import CloseIcon from "@material-ui/icons/Close";

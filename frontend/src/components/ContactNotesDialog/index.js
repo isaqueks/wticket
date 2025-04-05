@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@mui/joy/TextField';
 import List from '@mui/joy/List';
-import { makeStyles } from '@mui/joy/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import * as Yup from "yup";
 import { Formik, Form, Field } from "formik";
 

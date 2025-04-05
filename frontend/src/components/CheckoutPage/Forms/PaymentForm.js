@@ -7,7 +7,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@mui/joy/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Typography from '@mui/joy/Typography';
-import { makeStyles } from '@mui/joy/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import IconButton from '@mui/joy/IconButton';
 import MinimizeIcon from '@material-ui/icons/Minimize';

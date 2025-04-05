@@ -9,7 +9,7 @@ import React, {
 import { toast } from "react-toastify";
 import { useParams, useHistory } from "react-router-dom";
 
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Table from "@mui/joy/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";

@@ -14,7 +14,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@mui/joy/Typography";
 import { blue, green, grey } from "@material-ui/core/colors";
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { i18n } from "../../translate/i18n";
 

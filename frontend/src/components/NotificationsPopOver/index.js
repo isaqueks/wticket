@@ -11,7 +11,7 @@ import IconButton from "@mui/joy/IconButton";
 import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Badge from "@mui/joy/Badge";
 import ChatIcon from "@material-ui/icons/Chat";
 

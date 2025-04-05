@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Card } from "@material-ui/core";
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import TicketHeaderSkeleton from "../TicketHeaderSkeleton";
 
 const useStyles = makeStyles(theme => ({

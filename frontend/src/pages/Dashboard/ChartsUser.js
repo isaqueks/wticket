@@ -18,7 +18,7 @@ import Typography from "@mui/joy/Typography";
 import api from '../../services/api';
 import { format } from 'date-fns';
 import { toast } from 'react-toastify';
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import './button.css';
 
 const useStyles = makeStyles((theme) => ({

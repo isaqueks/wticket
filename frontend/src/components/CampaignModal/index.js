@@ -14,7 +14,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import IconButton from "@mui/joy/IconButton";
 import TextField from "@mui/joy/TextField";
 import { green } from "@material-ui/core/colors";
-import { makeStyles } from "@mui/joy/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 

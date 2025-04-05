@@ -7,7 +7,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Avatar from '@mui/joy/Avatar';
 import Typography from '@mui/joy/Typography';
-import { makeStyles } from '@mui/joy/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import moment from 'moment';
 
