@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { makeStyles } from "@mui/joy/styles";
 import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@material-ui/icons/Search";
-import InputBase from "@mui/joy/InputBase";
+import InputBase from "@material-ui/core/InputBase";
 import Tabs from "@mui/joy/Tabs";
 import Tab from "@mui/joy/Tab";
 import Badge from "@mui/joy/Badge";

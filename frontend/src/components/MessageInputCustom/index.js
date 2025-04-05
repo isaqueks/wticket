@@ -8,7 +8,7 @@ import { isNil } from "lodash";
 
 import { makeStyles } from "@mui/joy/styles";
 import Paper from "@material-ui/core/Paper";
-import InputBase from "@mui/joy/InputBase";
+import InputBase from "@material-ui/core/InputBase";
 import CircularProgress from "@mui/joy/CircularProgress";
 import { green } from "@mui/joy/colors";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
