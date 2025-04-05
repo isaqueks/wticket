@@ -697,6 +697,9 @@ const useStyles = makeStyles((theme) => ({
   contactLastMessage: {
     marginLeft: 5,
     fontSize: "0.9rem",
+    maxWidth: '120px',
+    overflow: 'hidden',
+    display: 'inline-block'
   },
   newMessagesCount: {
     position: "absolute",
@@ -723,10 +726,10 @@ const useStyles = makeStyles((theme) => ({
   connectionTag: {
     background: "green",
     color: "#FFF",
-    padding: "2px 6px",
-    fontWeight: "bold",
-    borderRadius: 3,
-    fontSize: "0.75rem",
+    padding: "3px 7px",
+    // fontWeight: "bold",
+    borderRadius: 5,
+    fontSize: "0.8rem",
     whiteSpace: "nowrap",
   },
   lastMessageTime: {
@@ -913,7 +916,7 @@ const TicketListItemCustom = ({ ticket }) => {
 
   // Mensagem de saudação automática
   const handleSendMessage = async (id) => {
-    const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
+    const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
     const message = {
       read: 1,
       fromMe: true,
