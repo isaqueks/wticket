@@ -3,7 +3,7 @@ import Button from '@mui/joy/Button';
 import Card from '@mui/joy/Card';
 import CardActions from '@mui/joy/CardActions';
 import CardContent from '@mui/joy/CardContent';
-import CardHeader from '@mui/joy/CardHeader';
+import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@mui/joy/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Typography from '@mui/joy/Typography';
