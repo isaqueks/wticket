@@ -5,7 +5,7 @@ import Button from '@mui/joy/Button';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListItemSecondaryAction from /*'@mui/joy/ListItemSecondaryAction'*/'@material-ui/core/ListItemSecondaryAction';
+import ListItemSecondaryAction from /*'@material-ui/core/ListItemSecondaryAction'*/'@material-ui/core/ListItemSecondaryAction';
 import IconButton from '@mui/joy/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';

@@ -4,7 +4,7 @@ import IconButton from '@mui/joy/IconButton';
 import ListItem from '@mui/joy/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@mui/joy/ListItemAvatar';
-import ListItemSecondaryAction from '@mui/joy/ListItemSecondaryAction';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Avatar from '@mui/joy/Avatar';
 import Typography from '@mui/joy/Typography';
 import { makeStyles } from '@mui/joy/styles';
