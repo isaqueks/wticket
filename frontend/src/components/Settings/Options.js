@@ -8,7 +8,7 @@ import Select from "@mui/joy/Select";
 import FormHelperText from "@mui/joy/FormHelperText";
 import TextField from "@mui/joy/TextField";
 import Title from "../Title";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import Typography from "@mui/joy/Typography";
 import useSettings from "../../hooks/useSettings";
 import { ToastContainer, toast } from 'react-toastify';

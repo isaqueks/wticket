@@ -2,7 +2,7 @@ import React, { useState, useEffect, useReducer, useCallback, useContext } from 
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@mui/joy/styles";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import Button from "@mui/joy/Button";
 import TextField from "@mui/joy/TextField";
 import InputAdornment from "@mui/joy/InputAdornment";

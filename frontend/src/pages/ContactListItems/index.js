@@ -15,7 +15,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import Button from "@mui/joy/Button";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@mui/joy/TextField";

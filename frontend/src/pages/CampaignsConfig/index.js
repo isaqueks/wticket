@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { makeStyles } from "@mui/joy/styles";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import { toast } from "react-toastify";
 
 import MainContainer from "../../components/MainContainer";

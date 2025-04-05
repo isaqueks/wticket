@@ -3,7 +3,7 @@ import openSocket from "../../services/socket-io";
 
 import { makeStyles } from "@mui/joy/styles";
 import List from "@mui/joy/List";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 
 import TicketListItem from "../TicketListItem";
 import TicketsListSkeleton from "../TicketsListSkeleton";

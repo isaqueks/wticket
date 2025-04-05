@@ -1,6 +1,6 @@
 import React from "react";
 
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import Table from '@mui/joy/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';

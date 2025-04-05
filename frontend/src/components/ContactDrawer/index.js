@@ -9,7 +9,7 @@ import Link from "@mui/joy/Link";
 import InputLabel from "@mui/joy/InputLabel";
 import Avatar from "@mui/joy/Avatar";
 import Button from "@mui/joy/Button";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import CreateIcon from '@material-ui/icons/Create';
 
 import { i18n } from "../../translate/i18n";

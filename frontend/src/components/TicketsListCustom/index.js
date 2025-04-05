@@ -2,7 +2,7 @@ import React, { useState, useEffect, useReducer, useContext } from "react";
 
 import { makeStyles } from "@mui/joy/styles";
 import List from "@mui/joy/List";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 
 import TicketListItem from "../TicketListItemCustom";
 import TicketsListSkeleton from "../TicketsListSkeleton";

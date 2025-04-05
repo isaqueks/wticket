@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { isNil } from "lodash";
 
 import { makeStyles } from "@mui/joy/styles";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import InputBase from "@mui/joy/InputBase";
 import CircularProgress from "@mui/joy/CircularProgress";
 import { green } from "@mui/joy/colors";

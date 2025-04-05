@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import { makeStyles } from "@mui/joy/styles";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import Typography from "@mui/joy/Typography";
 import Container from "@mui/joy/Container";
 import Select from "@mui/joy/Select";

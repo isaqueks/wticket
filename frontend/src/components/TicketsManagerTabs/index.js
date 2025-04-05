@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { makeStyles } from "@mui/joy/styles";
-import Paper from "@mui/joy/Paper";
+import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@mui/joy/InputBase";
 import Tabs from "@mui/joy/Tabs";

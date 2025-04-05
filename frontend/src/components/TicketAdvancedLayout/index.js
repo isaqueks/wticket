@@ -1,5 +1,5 @@
 import { styled } from '@mui/joy/styles';
-import Paper from '@mui/joy/Paper';
+import Paper from '@material-ui/core/Paper';
 
 const TicketAdvancedLayout = styled(Paper)({
     height: `calc(100% - 48px)`,
