@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/joy/Button";
-import Dialog from "@mui/joy/Dialog";
+import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@mui/joy/DialogActions";
 import DialogContent from "@mui/joy/DialogContent";
 import DialogTitle from "@mui/joy/DialogTitle";
