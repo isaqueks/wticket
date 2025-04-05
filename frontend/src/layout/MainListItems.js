@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
 
 import ListItem from "@mui/joy/ListItem";
-import ListItemIcon from "@mui/joy/ListItemIcon";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListSubheader from "@mui/joy/ListSubheader";
 import Divider from "@mui/joy/Divider";
