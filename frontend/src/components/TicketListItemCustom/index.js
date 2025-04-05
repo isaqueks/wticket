@@ -627,34 +627,35 @@
 // export default TicketListItemCustom;
 
 import React, { useContext, useEffect, useRef, useState } from "react";
-
 import clsx from "clsx";
 import { format, isSameDay, parseISO } from "date-fns";
 import { useHistory, useParams } from "react-router-dom";
 
-import Avatar from "@material-ui/core/Avatar";
-import Badge from "@material-ui/core/Badge";
-import Box from "@material-ui/core/Box";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
+import {
+  Avatar,
+  Badge,
+  Box,
+  Divider,
+  ListItem,
+  ListItemAvatar,
+  ListItemSecondaryAction,
+  ListItemText,
+  Tooltip,
+  Typography,
+} from "@material-ui/core";
 import { blue, green, grey } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
-
-import { Tooltip } from "@material-ui/core";
 import { v4 as uuidv4 } from "uuid";
+
+import AndroidIcon from "@material-ui/icons/Android";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+
 import { AuthContext } from "../../context/Auth/AuthContext";
 import { TicketsContext } from "../../context/Tickets/TicketsContext";
 import toastError from "../../errors/toastError";
 import api from "../../services/api";
 import ButtonWithSpinner from "../ButtonWithSpinner";
 import MarkdownWrapper from "../MarkdownWrapper";
-
-import AndroidIcon from "@material-ui/icons/Android";
-import VisibilityIcon from "@material-ui/icons/Visibility";
 import ContactTag from "../ContactTag";
 import TicketMessagesDialog from "../TicketMessagesDialog";
 
@@ -665,6 +666,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 6,
     marginBottom: 8,
     boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+    // Aumente o padding e a altura mínima para dar mais espaço
+    padding: "10px 15px",
+    minHeight: 90,
     "&:hover": {
       backgroundColor: "#f9f9f9",
     },
@@ -672,56 +676,16 @@ const useStyles = makeStyles((theme) => ({
   pendingTicket: {
     cursor: "unset",
   },
-  queueTag: {
-    background: "#FCFCFC",
-    color: "#000",
-    marginRight: 1,
-    padding: 1,
-    fontWeight: "bold",
-    paddingLeft: 5,
-    paddingRight: 5,
-    borderRadius: 3,
-    fontSize: "0.8em",
-    whiteSpace: "nowrap",
-  },
-  noTicketsDiv: {
-    display: "flex",
-    height: "100px",
-    margin: 40,
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  noTicketsText: {
-    textAlign: "center",
-    color: "rgb(104, 121, 146)",
-    fontSize: "14px",
-    lineHeight: "1.4",
-  },
-  noTicketsTitle: {
-    textAlign: "center",
-    fontSize: "16px",
-    fontWeight: "600",
-    margin: "0px",
-  },
-  newMessagesCount: {
+  // Barra colorida lateral (cor da fila)
+  ticketQueueColor: {
+    flex: "none",
+    width: 6,
+    height: "100%",
     position: "absolute",
-    alignSelf: "center",
-    marginRight: 8,
-    marginLeft: "auto",
-    top: "10px",
-    left: "20px",
-    borderRadius: 0,
-  },
-  connectionTag: {
-    background: "green",
-    color: "#FFF",
-    marginRight: 5,
-    padding: "2px 6px",
-    fontWeight: "bold",
-    borderRadius: 3,
-    fontSize: "0.75rem",
-    whiteSpace: "nowrap",
+    top: 0,
+    left: 0,
+    borderTopLeftRadius: 6,
+    borderBottomLeftRadius: 6,
   },
   contactNameWrapper: {
     display: "flex",
@@ -734,39 +698,18 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 5,
     fontSize: "0.9rem",
   },
-  lastMessageTime: {
-    // bolha de horário à direita
-    background: "#333",
-    color: "#fff",
-    borderRadius: 5,
-    padding: "2px 6px",
-    fontSize: "0.85rem",
-    marginTop: 4,
-    // Deixe fixo à direita
+  newMessagesCount: {
     position: "absolute",
-    right: 16,
-    top: "50%",
-    transform: "translateY(-50%)",
-  },
-  closedBadge: {
     alignSelf: "center",
-    justifySelf: "flex-end",
-    marginRight: 32,
+    marginRight: 8,
     marginLeft: "auto",
+    top: "10px",
+    left: "20px",
+    borderRadius: 0,
   },
   badgeStyle: {
     color: "white",
     backgroundColor: green[500],
-  },
-  ticketQueueColor: {
-    flex: "none",
-    width: "5px",
-    height: "100%",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    borderTopLeftRadius: 6,
-    borderBottomLeftRadius: 6,
   },
   secondaryContentSecond: {
     display: "flex",
@@ -774,27 +717,38 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: 4,
     marginLeft: 5,
+    // Adiciona um "gap" para separar os badges
+    gap: 4,
   },
+  connectionTag: {
+    background: "green",
+    color: "#FFF",
+    padding: "2px 6px",
+    fontWeight: "bold",
+    borderRadius: 3,
+    fontSize: "0.75rem",
+    whiteSpace: "nowrap",
+  },
+  lastMessageTime: {
+    background: "#333",
+    color: "#fff",
+    borderRadius: 5,
+    padding: "3px 8px",
+    fontSize: "0.8rem",
+    position: "absolute",
+    right: 16,
+    top: 16,
+  },
+  // Botões de ação (ACEITAR, FINALIZAR, REABRIR)
   acceptButton: {
-    // Botão de ação (ACEITAR, FINALIZAR, REABRIR)
     backgroundColor: "#FF4B4B",
     color: "#FFF",
-    fontSize: "0.7rem",
+    fontSize: "0.75rem",
     marginLeft: 8,
+    padding: "5px 12px",
+    minWidth: 90,
     "&:hover": {
       backgroundColor: "#d43b3b",
-    },
-  },
-  Radiusdot: {
-    "& .MuiBadge-badge": {
-      borderRadius: 2,
-      position: "inherit",
-      height: 16,
-      margin: 2,
-      padding: 3,
-    },
-    "& .MuiBadge-anchorOriginTopRightRectangle": {
-      transform: "scale(1) translate(0%, -40%)",
     },
   },
 }));
@@ -817,6 +771,7 @@ const TicketListItemCustom = ({ ticket }) => {
   const [verpreview] = useState(false);
   const { profile } = user;
 
+  // Carrega dados do ticket
   useEffect(() => {
     if (ticket.userId && ticket.user) {
       setTicketUser(ticket.user?.name?.toUpperCase());
@@ -836,6 +791,7 @@ const TicketListItemCustom = ({ ticket }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Função para fechar ticket
   const handleCloseTicket = async (id) => {
     setTag(ticket?.tags);
     setLoading(true);
@@ -858,6 +814,7 @@ const TicketListItemCustom = ({ ticket }) => {
     history.push(`/tickets/`);
   };
 
+  // Controla a exibição do tempo de última interação (atualiza a cada 30s)
   useEffect(() => {
     const renderLastInteractionLabel = () => {
       if (!ticket.lastMessage) return "";
@@ -897,7 +854,6 @@ const TicketListItemCustom = ({ ticket }) => {
       } else {
         setLastInteractionLabel("");
       }
-      // atualiza a cada 30s
       setTimeout(updateLastInteractionLabel, 30000);
     };
 
@@ -905,6 +861,7 @@ const TicketListItemCustom = ({ ticket }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ticket]);
 
+  // Função para reabrir ticket
   const handleReopenTicket = async (id) => {
     setLoading(true);
     try {
@@ -923,6 +880,7 @@ const TicketListItemCustom = ({ ticket }) => {
     history.push(`/tickets/${ticket.uuid}`);
   };
 
+  // Função para aceitar ticket
   const handleAcepptTicket = async (id) => {
     setLoading(true);
     try {
@@ -931,7 +889,7 @@ const TicketListItemCustom = ({ ticket }) => {
         userId: user?.id,
       });
 
-      // Exemplo de configuração, caso tenha
+      // Verifica setting para envio de saudação (opcional)
       let settingIndex;
       try {
         const { data } = await api.get("/settings/");
@@ -953,6 +911,7 @@ const TicketListItemCustom = ({ ticket }) => {
     history.push(`/tickets/${ticket.uuid}`);
   };
 
+  // Mensagem de saudação automática
   const handleSendMessage = async (id) => {
     const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
     const message = {
@@ -968,14 +927,15 @@ const TicketListItemCustom = ({ ticket }) => {
     }
   };
 
+  // Seleciona o ticket
   const handleSelectTicket = (ticket) => {
     const code = uuidv4();
     const { id, uuid } = ticket;
     setCurrentTicket({ id, uuid, code });
   };
 
+  // Renderiza ícones informativos (exemplo: Chatbot)
   const renderTicketInfo = () => {
-    // Exemplo de ícone "Chatbot" + qualquer outro
     return (
       <>
         {ticket.chatbot && (
@@ -1009,7 +969,7 @@ const TicketListItemCustom = ({ ticket }) => {
           [classes.pendingTicket]: ticket.status === "pending",
         })}
       >
-        {/* Barra colorida à esquerda, com cor da fila ou cor padrão */}
+        {/* Barra colorida da fila */}
         <Tooltip
           arrow
           placement="right"
@@ -1034,7 +994,7 @@ const TicketListItemCustom = ({ ticket }) => {
           />
         </ListItemAvatar>
 
-        {/* Texto principal (nome, última mensagem etc.) */}
+        {/* Texto principal */}
         <ListItemText
           disableTypography
           primary={
@@ -1079,7 +1039,7 @@ const TicketListItemCustom = ({ ticket }) => {
                 )}
               </Typography>
 
-              {/* Tags secundárias: conexão (WhatsApp), usuário e fila */}
+              {/* Badges (ex: conexão, usuário, fila, tags) */}
               <div className={classes.secondaryContentSecond}>
                 {ticket?.whatsapp?.name && (
                   <Badge className={classes.connectionTag}>
@@ -1103,7 +1063,7 @@ const TicketListItemCustom = ({ ticket }) => {
                   {ticket.queue?.name?.toUpperCase() || "SEM FILA"}
                 </Badge>
 
-                {/* Se houver tags personalizadas */}
+                {/* Se tiver tags personalizadas */}
                 {tag?.map((tg) => {
                   return (
                     <ContactTag
@@ -1117,7 +1077,7 @@ const TicketListItemCustom = ({ ticket }) => {
           }
         />
 
-        {/* Horário da última mensagem (bolha) */}
+        {/* Horário da última mensagem no canto superior direito */}
         {ticket.lastMessage && (
           <Typography
             className={classes.lastMessageTime}
@@ -1131,9 +1091,9 @@ const TicketListItemCustom = ({ ticket }) => {
           </Typography>
         )}
 
-        {/* Botões de ação (aceitar, finalizar, reabrir) */}
+        {/* Ações à direita */}
         <ListItemSecondaryAction>
-          {/* Badge de mensagens não lidas */}
+          {/* Quantidade de mensagens não lidas */}
           <Badge
             className={classes.newMessagesCount}
             badgeContent={ticket.unreadMessages}
@@ -1141,7 +1101,8 @@ const TicketListItemCustom = ({ ticket }) => {
               badge: classes.badgeStyle,
             }}
           />
-          {/* Se o ticket estiver pendente, mostra botão "ACEITAR" */}
+
+          {/* Se estiver pendente, mostra "ACEITAR" */}
           {ticket.status === "pending" && (
             <ButtonWithSpinner
               className={classes.acceptButton}
@@ -1153,7 +1114,7 @@ const TicketListItemCustom = ({ ticket }) => {
             </ButtonWithSpinner>
           )}
 
-          {/* Se o ticket NÃO estiver fechado, mostra "FINALIZAR" */}
+          {/* Se não estiver fechado, mostra "FINALIZAR" */}
           {ticket.status !== "closed" && (
             <ButtonWithSpinner
               className={classes.acceptButton}
@@ -1165,7 +1126,7 @@ const TicketListItemCustom = ({ ticket }) => {
             </ButtonWithSpinner>
           )}
 
-          {/* Se o ticket ESTIVER fechado, mostra "REABRIR" */}
+          {/* Se estiver fechado, mostra "REABRIR" */}
           {ticket.status === "closed" && (
             <ButtonWithSpinner
               className={classes.acceptButton}
@@ -1179,7 +1140,7 @@ const TicketListItemCustom = ({ ticket }) => {
         </ListItemSecondaryAction>
       </ListItem>
 
-      {/* Divider simples entre itens */}
+      {/* Divider entre os itens */}
       <Divider style={{ marginLeft: 60 }} />
     </>
   );
