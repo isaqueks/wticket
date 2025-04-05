@@ -18,7 +18,7 @@ import TableRow from "@mui/joy/TableRow";
 import IconButton from "@mui/joy/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@mui/joy/TextField";
-import InputAdornment from "@mui/joy/InputAdornment";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import EditIcon from "@material-ui/icons/Edit";
