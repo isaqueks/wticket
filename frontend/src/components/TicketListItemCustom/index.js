@@ -316,9 +316,10 @@ const TicketListItemCustom = ({ ticket }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
+    event.stopPropagation();
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (e) => {
     setAnchorEl(null);
   };
 
@@ -485,7 +486,7 @@ const TicketListItemCustom = ({ ticket }) => {
                     loading={loading}
                     onClick={() => handleAcepptTicket(ticket.id)}
                   >
-                    ACEITAR
+                    Aceitar Atendimento
                   </MenuItem>
                 )}
                 {/* Se não estiver fechado, mostra "FINALIZAR" */}
@@ -494,7 +495,7 @@ const TicketListItemCustom = ({ ticket }) => {
                     loading={loading}
                     onClick={() => handleCloseTicket(ticket.id)}
                   >
-                    FINALIZAR
+                    Finalizar Atendimento
                   </MenuItem>
                 )}
 
@@ -504,7 +505,7 @@ const TicketListItemCustom = ({ ticket }) => {
                     loading={loading}
                     onClick={() => handleReopenTicket(ticket.id)}
                   >
-                    REABRIR
+                    Reabrir Atendimento
                   </MenuItem>
                 )}
                 {/* Ícone de espiar conversa, se for admin */}
