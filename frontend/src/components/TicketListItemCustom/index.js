@@ -71,9 +71,9 @@ const useStyles = makeStyles((theme) => ({
   contactLastMessage: {
     marginLeft: 5,
     fontSize: "0.9rem",
-    maxWidth: '140px',
     overflow: 'hidden',
-    display: 'inline-block'
+    display: 'grid',
+    gridTemplateColumns: 'auto 80px'
   },
   newMessagesCount: {
     position: "absolute",
@@ -126,6 +126,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#d43b3b",
     },
   },
+  wrapper140: {
+    width: '140px',
+    overflow: 'hidden',
+  }
 }));
 
 const TicketListItemCustom = ({ ticket }) => {
@@ -418,7 +422,9 @@ const TicketListItemCustom = ({ ticket }) => {
                   color="textSecondary"
                 >
                   {ticket.lastMessage && !verpreview ? (
-                    <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>
+                    <span className={classes.wrapper140}>
+                      <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>
+                    </span>
                   ) : (
                     <MarkdownWrapper>---</MarkdownWrapper>
                   )}
