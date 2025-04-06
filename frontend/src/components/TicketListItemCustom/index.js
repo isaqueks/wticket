@@ -1013,17 +1013,18 @@ const TicketListItemCustom = ({ ticket }) => {
         ticketId={ticket.id}
       />
       <ListItem
-        dense
-        button
-        onClick={(e) => {
-          if (ticket.status === "pending") return;
-          handleSelectTicket(ticket);
-        }}
-        selected={ticketId && +ticketId === ticket.id}
-        className={clsx(classes.ticket, {
-          [classes.pendingTicket]: ticket.status === "pending",
-        })}
+                dense
+                button
+                onClick={(e) => {
+                  if (ticket.status === "pending") return;
+                  handleSelectTicket(ticket);
+                }}
+                selected={ticketId && +ticketId === ticket.id}
+                className={clsx(classes.ticket, {
+                  [classes.pendingTicket]: ticket.status === "pending",
+                })}
       >
+      <ListItem>
         {/* Barra colorida da fila */}
         <Tooltip
           arrow
@@ -1146,6 +1147,7 @@ const TicketListItemCustom = ({ ticket }) => {
 
       </ListItem>
         <span>TESTE</span>
+      </ListItem>
 
       {/* Divider entre os itens */}
       <Divider style={{ marginLeft: 60 }} />
