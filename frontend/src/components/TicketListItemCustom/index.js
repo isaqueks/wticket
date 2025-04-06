@@ -313,6 +313,15 @@ const TicketListItemCustom = ({ ticket }) => {
     setCurrentTicket({ id, uuid, code });
   };
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   // Renderiza ícones informativos (exemplo: Chatbot)
   const renderTicketInfo = () => {
     return (
@@ -480,7 +489,7 @@ const TicketListItemCustom = ({ ticket }) => {
                 slotProps={{
                   paper: {
                     style: {
-                      maxHeight: ITEM_HEIGHT * 4.5,
+                      maxHeight: 48 * 4.5,
                       width: '20ch',
                     },
                   },
