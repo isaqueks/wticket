@@ -108,11 +108,6 @@ const useStyles = makeStyles((theme) => ({
   },
   lastMessageTime: {
     color: "#333",
-    borderRadius: 5,
-    padding: "3px 8px",
-    position: "absolute",
-    right: 16,
-    top: 16,
   },
   // Botões de ação (ACEITAR, FINALIZAR, REABRIR)
   acceptButton: {
