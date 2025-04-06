@@ -1027,10 +1027,6 @@ const TicketListItemCustom = ({ ticket }) => {
         [classes.pendingTicket]: ticket.status === "pending",
       })}
       >
-
-      <ListItem
-
-      >
         {/* Barra colorida da fila */}
         <Tooltip
           arrow
@@ -1042,6 +1038,8 @@ const TicketListItemCustom = ({ ticket }) => {
             className={classes.ticketQueueColor}
           ></span>
         </Tooltip>
+
+      <ListItem>
 
         {/* Avatar do contato */}
         <ListItemAvatar>
