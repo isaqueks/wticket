@@ -1003,7 +1003,7 @@ const TicketListItemCustom = ({ ticket }) => {
       );
     })}
   </div>
-</>;
+  </>;
 
   return (
     <>
@@ -1077,9 +1077,9 @@ const TicketListItemCustom = ({ ticket }) => {
               )}
             </div>
           }
-          // secondary={
-          //   // secondary
-          // }
+          secondary={
+            secondary
+          }
         />
 
         {/* Horário da última mensagem no canto superior direito */}
@@ -1143,6 +1143,8 @@ const TicketListItemCustom = ({ ticket }) => {
             </ButtonWithSpinner>
           )}
         </ListItemSecondaryAction>
+
+        <span>TESTE</span>
       </ListItem>
 
       {/* Divider entre os itens */}
