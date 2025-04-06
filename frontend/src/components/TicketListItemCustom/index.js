@@ -124,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
   wrapper140: {
     width: '140px',
     overflow: 'hidden',
+    textOverflow: 'ellipsis'
   }
 }));
 
