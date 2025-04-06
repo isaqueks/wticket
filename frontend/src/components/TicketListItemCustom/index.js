@@ -1144,8 +1144,8 @@ const TicketListItemCustom = ({ ticket }) => {
           )}
         </ListItemSecondaryAction>
 
-        <span>TESTE</span>
       </ListItem>
+        <span>TESTE</span>
 
       {/* Divider entre os itens */}
       <Divider style={{ marginLeft: 60 }} />
