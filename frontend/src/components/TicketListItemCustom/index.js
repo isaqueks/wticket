@@ -1154,6 +1154,8 @@ const TicketListItemCustom = ({ ticket }) => {
         
       </ListItem>
 
+      <div>gozei</div>
+
       </Paper>
 
       {/* Divider entre os itens */}
