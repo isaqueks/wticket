@@ -8,10 +8,13 @@ import {
   Badge,
   Box,
   Divider,
+  IconButton,
   ListItem,
   ListItemAvatar,
   ListItemSecondaryAction,
   ListItemText,
+  Menu,
+  MenuItem,
   Paper,
   Tooltip,
   Typography,
@@ -31,6 +34,7 @@ import ButtonWithSpinner from "../ButtonWithSpinner";
 import MarkdownWrapper from "../MarkdownWrapper";
 import ContactTag from "../ContactTag";
 import TicketMessagesDialog from "../TicketMessagesDialog";
+import { MoreVert } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   ticket: {
@@ -424,7 +428,7 @@ const TicketListItemCustom = ({ ticket }) => {
                   ) : (
                     <MarkdownWrapper>---</MarkdownWrapper>
                   )}
-                  
+
                   {/* Horário da última mensagem no canto superior direito */}
                   {ticket.lastMessage && (
                     <Typography
@@ -454,41 +458,76 @@ const TicketListItemCustom = ({ ticket }) => {
               }}
             />
 
-            {/* Se estiver pendente, mostra "ACEITAR" */}
-            {ticket.status === "pending" && (
-              <ButtonWithSpinner
-                className={classes.acceptButton}
-                size="small"
-                loading={loading}
-                onClick={() => handleAcepptTicket(ticket.id)}
+            <div>
+              <IconButton
+                aria-label="more"
+                id="long-button"
+                aria-controls={open ? 'long-menu' : undefined}
+                aria-expanded={open ? 'true' : undefined}
+                aria-haspopup="true"
+                onClick={handleClick}
               >
-                ACEITAR
-              </ButtonWithSpinner>
-            )}
+                <MoreVert />
+              </IconButton>
+              <Menu
+                id="long-menu"
+                MenuListProps={{
+                  'aria-labelledby': 'long-button',
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: '20ch',
+                    },
+                  },
+                }}
+              >
+                {/* Se estiver pendente, mostra "ACEITAR" */}
+                {ticket.status === "pending" && (
+                  <MenuItem
+                    className={classes.acceptButton}
+                    size="small"
+                    loading={loading}
+                    onClick={() => handleAcepptTicket(ticket.id)}
+                  >
+                    ACEITAR
+                  </MenuItem>
+                )}
+                {/* Se não estiver fechado, mostra "FINALIZAR" */}
+                {ticket.status !== "closed" && (
+                  <MenuItem
+                    className={classes.acceptButton}
+                    size="small"
+                    loading={loading}
+                    onClick={() => handleCloseTicket(ticket.id)}
+                  >
+                    FINALIZAR
+                  </MenuItem>
+                )}
 
-            {/* Se não estiver fechado, mostra "FINALIZAR" */}
-            {ticket.status !== "closed" && (
-              <ButtonWithSpinner
-                className={classes.acceptButton}
-                size="small"
-                loading={loading}
-                onClick={() => handleCloseTicket(ticket.id)}
-              >
-                FINALIZAR
-              </ButtonWithSpinner>
-            )}
-
-            {/* Se estiver fechado, mostra "REABRIR" */}
-            {ticket.status === "closed" && (
-              <ButtonWithSpinner
-                className={classes.acceptButton}
-                size="small"
-                loading={loading}
-                onClick={() => handleReopenTicket(ticket.id)}
-              >
-                REABRIR
-              </ButtonWithSpinner>
-            )}
+                {/* Se estiver fechado, mostra "REABRIR" */}
+                {ticket.status === "closed" && (
+                  <MenuItem
+                    className={classes.acceptButton}
+                    size="small"
+                    loading={loading}
+                    onClick={() => handleReopenTicket(ticket.id)}
+                  >
+                    REABRIR
+                  </MenuItem>
+                )}
+                {/* {options.map((option) => (
+                  <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+                    {option}
+                  </MenuItem>
+                ))} */}
+              </Menu>
+            </div>
+            
           </ListItemSecondaryAction>
 
 
