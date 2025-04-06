@@ -640,6 +640,7 @@ import {
   ListItemAvatar,
   ListItemSecondaryAction,
   ListItemText,
+  Paper,
   Tooltip,
   Typography,
 } from "@material-ui/core";
@@ -1012,19 +1013,24 @@ const TicketListItemCustom = ({ ticket }) => {
         handleClose={() => setOpenTicketMessageDialog(false)}
         ticketId={ticket.id}
       />
-      <ListItem
-                dense
-                button
-                onClick={(e) => {
-                  if (ticket.status === "pending") return;
-                  handleSelectTicket(ticket);
-                }}
-                selected={ticketId && +ticketId === ticket.id}
-                className={clsx(classes.ticket, {
-                  [classes.pendingTicket]: ticket.status === "pending",
-                })}
+
+      <Paper
+      
+      dense
+      button
+      onClick={(e) => {
+        if (ticket.status === "pending") return;
+        handleSelectTicket(ticket);
+      }}
+      selected={ticketId && +ticketId === ticket.id}
+      className={clsx(classes.ticket, {
+        [classes.pendingTicket]: ticket.status === "pending",
+      })}
       >
-      <ListItem>
+
+      <ListItem
+
+      >
         {/* Barra colorida da fila */}
         <Tooltip
           arrow
@@ -1145,9 +1151,10 @@ const TicketListItemCustom = ({ ticket }) => {
           )}
         </ListItemSecondaryAction>
 
+        
       </ListItem>
-        <span>TESTE</span>
-      </ListItem>
+
+      </Paper>
 
       {/* Divider entre os itens */}
       <Divider style={{ marginLeft: 60 }} />
