@@ -794,7 +794,7 @@ const TicketListItemCustom = ({ ticket }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Função para fechar ticket
+  // Fecha ticket
   const handleCloseTicket = async (id) => {
     setTag(ticket?.tags);
     setLoading(true);
@@ -817,7 +817,7 @@ const TicketListItemCustom = ({ ticket }) => {
     history.push(`/tickets/`);
   };
 
-  // Controla a exibição do tempo de última interação (atualiza a cada 30s)
+  // Exibe tempo da última interação
   useEffect(() => {
     const renderLastInteractionLabel = () => {
       if (!ticket.lastMessage) return "";
@@ -864,7 +864,7 @@ const TicketListItemCustom = ({ ticket }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ticket]);
 
-  // Função para reabrir ticket
+  // Reabre ticket
   const handleReopenTicket = async (id) => {
     setLoading(true);
     try {
@@ -883,7 +883,7 @@ const TicketListItemCustom = ({ ticket }) => {
     history.push(`/tickets/${ticket.uuid}`);
   };
 
-  // Função para aceitar ticket
+  // Aceita ticket
   const handleAcepptTicket = async (id) => {
     setLoading(true);
     try {
@@ -892,7 +892,7 @@ const TicketListItemCustom = ({ ticket }) => {
         userId: user?.id,
       });
 
-      // Verifica setting para envio de saudação (opcional)
+      // Exemplo de configuração para saudação
       let settingIndex;
       try {
         const { data } = await api.get("/settings/");
@@ -914,9 +914,9 @@ const TicketListItemCustom = ({ ticket }) => {
     history.push(`/tickets/${ticket.uuid}`);
   };
 
-  // Mensagem de saudação automática
+  // Envia saudação automática
   const handleSendMessage = async (id) => {
-    const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
+    const msg = `{{ms}} *{{name}}*, meu nome é *${user?.name}* e agora vou prosseguir com seu atendimento!`;
     const message = {
       read: 1,
       fromMe: true,
@@ -930,14 +930,14 @@ const TicketListItemCustom = ({ ticket }) => {
     }
   };
 
-  // Seleciona o ticket
+  // Seleciona ticket
   const handleSelectTicket = (ticket) => {
     const code = uuidv4();
     const { id, uuid } = ticket;
     setCurrentTicket({ id, uuid, code });
   };
 
-  // Renderiza ícones informativos (exemplo: Chatbot)
+  // Ícones (ex: Chatbot)
   const renderTicketInfo = () => {
     return (
       <>
@@ -960,6 +960,7 @@ const TicketListItemCustom = ({ ticket }) => {
         handleClose={() => setOpenTicketMessageDialog(false)}
         ticketId={ticket.id}
       />
+
       <ListItem
         dense
         button
@@ -973,130 +974,110 @@ const TicketListItemCustom = ({ ticket }) => {
         })}
       >
         {/* Barra colorida da fila */}
-        <Tooltip
-          arrow
-          placement="right"
-          title={ticket.queue?.name?.toUpperCase() || "SEM FILA"}
-        >
-          <span
-            style={{ backgroundColor: ticket.queue?.color || "#7C7C7C" }}
-            className={classes.ticketQueueColor}
-          ></span>
-        </Tooltip>
+        <div
+          style={{ backgroundColor: ticket.queue?.color || "#7C7C7C" }}
+          className={classes.ticketQueueColor}
+        />
 
-        {/* Avatar do contato */}
-        <ListItemAvatar>
+        {/* Avatar no topo/esquerda */}
+        <ListItemAvatar className={classes.avatarWrapper}>
           <Avatar
-            style={{
-              marginLeft: 10,
-              width: 48,
-              height: 48,
-              borderRadius: 8,
-            }}
             src={ticket?.contact?.profilePicUrl}
+            className={classes.avatar}
           />
         </ListItemAvatar>
 
-        {/* Texto principal */}
-        <ListItemText
-          disableTypography
-          primary={
-            <div className={classes.contactNameWrapper}>
-              <Typography noWrap component="span" variant="body2" color="textPrimary">
-                <strong>
-                  {ticket.contact.name} {lastInteractionLabel}
-                </strong>
+        {/* Conteúdo principal (nome, mensagem, badges) */}
+        <div className={classes.contentWrapper}>
+          {/* Linha de cima: Nome + (última interação) + Ícone espiar se admin */}
+          <div className={classes.topRow}>
+            <Box display="flex" alignItems="center">
+              <Typography component="span" className={classes.contactName}>
+                {ticket.contact.name}
               </Typography>
+              {/* Label de tempo (minutos atrás, horas atrás, etc.) */}
+              <span className={classes.lastInteractionLabel}>
+                {lastInteractionLabel}
+              </span>
+              {/* Ícone do chatbot (se houver) */}
+              {renderTicketInfo()}
+            </Box>
 
-              {/* Ícone de espiar conversa, se for admin */}
-              {profile === "admin" && (
-                <Tooltip title="Espiar Conversa">
-                  <VisibilityIcon
-                    onClick={() => setOpenTicketMessageDialog(true)}
-                    fontSize="small"
-                    style={{
-                      color: blue[700],
-                      cursor: "pointer",
-                      marginLeft: 10,
-                      verticalAlign: "middle",
-                    }}
-                  />
-                </Tooltip>
-              )}
-            </div>
-          }
-          secondary={
-            <>
-              {/* Última mensagem */}
-              <Typography
-                className={classes.contactLastMessage}
-                noWrap
-                component="span"
-                variant="body2"
-                color="textSecondary"
-              >
-                {ticket.lastMessage && !verpreview ? (
-                  <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>
-                ) : (
-                  <MarkdownWrapper>---</MarkdownWrapper>
-                )}
-              </Typography>
-
-              {/* Badges (ex: conexão, usuário, fila, tags) */}
-              <div className={classes.secondaryContentSecond}>
-                {ticket?.whatsapp?.name && (
-                  <Badge className={classes.connectionTag}>
-                    {ticket?.whatsapp?.name?.toUpperCase()}
-                  </Badge>
-                )}
-                {ticketUser && (
-                  <Badge
-                    style={{ backgroundColor: "#000" }}
-                    className={classes.connectionTag}
-                  >
-                    {ticketUser}
-                  </Badge>
-                )}
-                <Badge
+            {/* Ícone de Espiar Conversa se for admin */}
+            {profile === "admin" && (
+              <Tooltip title="Espiar Conversa">
+                <VisibilityIcon
+                  onClick={() => setOpenTicketMessageDialog(true)}
+                  fontSize="small"
                   style={{
-                    backgroundColor: ticket.queue?.color || "#7c7c7c",
+                    color: blue[700],
+                    cursor: "pointer",
+                    marginLeft: 10,
+                    verticalAlign: "middle",
                   }}
-                  className={classes.connectionTag}
-                >
-                  {ticket.queue?.name?.toUpperCase() || "SEM FILA"}
-                </Badge>
+                />
+              </Tooltip>
+            )}
+          </div>
 
-                {/* Se tiver tags personalizadas */}
-                {tag?.map((tg) => {
-                  return (
-                    <ContactTag
-                      tag={tg}
-                      key={`ticket-contact-tag-${ticket.id}-${tg.id}`}
-                    />
-                  );
-                })}
-              </div>
-            </>
-          }
-        />
+          {/* Linha do meio: Última mensagem */}
+          <div className={classes.messageRow}>
+            {ticket.lastMessage && !verpreview ? (
+              <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>
+            ) : (
+              <MarkdownWrapper>---</MarkdownWrapper>
+            )}
+          </div>
 
-        {/* Horário da última mensagem no canto superior direito */}
-        {ticket.lastMessage && (
-          <Typography
-            className={classes.lastMessageTime}
-            component="span"
-            variant="body2"
-            color="textSecondary"
-          >
-            {isSameDay(parseISO(ticket.updatedAt), new Date())
-              ? format(parseISO(ticket.updatedAt), "HH:mm")
-              : format(parseISO(ticket.updatedAt), "dd/MM/yyyy")}
-          </Typography>
-        )}
+          {/* "Footer": Badges */}
+          <div className={classes.badgesRow}>
+            {/* Exemplo: ZAP, ADMIN, SEM FILA, etc. */}
+            {ticket?.whatsapp?.name && (
+              <Badge className={classes.connectionTag}>
+                {ticket?.whatsapp?.name?.toUpperCase()}
+              </Badge>
+            )}
+            {ticketUser && (
+              <Badge
+                style={{ backgroundColor: "#000" }}
+                className={classes.connectionTag}
+              >
+                {ticketUser}
+              </Badge>
+            )}
+            <Badge
+              style={{
+                backgroundColor: ticket.queue?.color || "#7c7c7c",
+              }}
+              className={classes.connectionTag}
+            >
+              {ticket.queue?.name?.toUpperCase() || "SEM FILA"}
+            </Badge>
 
-        {/* Ações à direita */}
-        <ListItemSecondaryAction>
-          {/* Quantidade de mensagens não lidas */}
+            {/* Tags personalizadas */}
+            {tag?.map((tg) => {
+              return (
+                <ContactTag
+                  tag={tg}
+                  key={`ticket-contact-tag-${ticket.id}-${tg.id}`}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Ações à direita: horário da última msg + botões */}
+        <ListItemSecondaryAction className={classes.actionsWrapper}>
+          {/* Horário da última mensagem no topo direito */}
+          {ticket.lastMessage && (
+            <Typography component="span" className={classes.lastMessageTime}>
+              {isSameDay(parseISO(ticket.updatedAt), new Date())
+                ? format(parseISO(ticket.updatedAt), "HH:mm")
+                : format(parseISO(ticket.updatedAt), "dd/MM/yyyy")}
+            </Typography>
+          )}
+
+          {/* Badge de mensagens não lidas */}
           <Badge
             className={classes.newMessagesCount}
             badgeContent={ticket.unreadMessages}
@@ -1105,7 +1086,7 @@ const TicketListItemCustom = ({ ticket }) => {
             }}
           />
 
-          {/* Se estiver pendente, mostra "ACEITAR" */}
+          {/* Botões (ACEITAR, FINALIZAR, REABRIR) */}
           {ticket.status === "pending" && (
             <ButtonWithSpinner
               className={classes.acceptButton}
@@ -1117,7 +1098,6 @@ const TicketListItemCustom = ({ ticket }) => {
             </ButtonWithSpinner>
           )}
 
-          {/* Se não estiver fechado, mostra "FINALIZAR" */}
           {ticket.status !== "closed" && (
             <ButtonWithSpinner
               className={classes.acceptButton}
@@ -1129,7 +1109,6 @@ const TicketListItemCustom = ({ ticket }) => {
             </ButtonWithSpinner>
           )}
 
-          {/* Se estiver fechado, mostra "REABRIR" */}
           {ticket.status === "closed" && (
             <ButtonWithSpinner
               className={classes.acceptButton}
@@ -1143,7 +1122,6 @@ const TicketListItemCustom = ({ ticket }) => {
         </ListItemSecondaryAction>
       </ListItem>
 
-      {/* Divider entre os itens */}
       <Divider style={{ marginLeft: 60 }} />
     </>
   );
