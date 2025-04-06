@@ -954,23 +954,6 @@ const TicketListItemCustom = ({ ticket }) => {
     );
   };
 
-  const secondary = <>
-    {/* Última mensagem */}
-    <Typography
-      className={classes.contactLastMessage}
-      noWrap
-      component="span"
-      variant="body2"
-      color="textSecondary"
-    >
-      {ticket.lastMessage && !verpreview ? (
-        <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>
-      ) : (
-        <MarkdownWrapper>---</MarkdownWrapper>
-      )}
-    </Typography>
-  </>;
-
   return (
     <>
       <TicketMessagesDialog
@@ -1048,7 +1031,22 @@ const TicketListItemCustom = ({ ticket }) => {
               </div>
             }
             secondary={
-              secondary
+              <>
+                {/* Última mensagem */}
+                <Typography
+                  className={classes.contactLastMessage}
+                  noWrap
+                  component="span"
+                  variant="body2"
+                  color="textSecondary"
+                >
+                  {ticket.lastMessage && !verpreview ? (
+                    <MarkdownWrapper>{ticket.lastMessage}</MarkdownWrapper>
+                  ) : (
+                    <MarkdownWrapper>---</MarkdownWrapper>
+                  )}
+                </Typography>
+              </>
             }
           />
 
@@ -1159,7 +1157,7 @@ const TicketListItemCustom = ({ ticket }) => {
       </Paper>
 
       {/* Divider entre os itens */}
-      <Divider style={{ marginLeft: 60 }} />
+      {/* <Divider style={{ marginLeft: 60 }} /> */}
     </>
   );
 };
