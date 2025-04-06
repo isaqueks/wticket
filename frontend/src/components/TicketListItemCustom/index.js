@@ -402,22 +402,6 @@ const TicketListItemCustom = ({ ticket }) => {
                     {ticket.contact.name} {lastInteractionLabel}
                   </strong>
                 </Typography>
-
-                {/* Ícone de espiar conversa, se for admin */}
-                {profile === "admin" && (
-                  <Tooltip title="Espiar Conversa">
-                    <VisibilityIcon
-                      onClick={() => setOpenTicketMessageDialog(true)}
-                      fontSize="small"
-                      style={{
-                        color: blue[700],
-                        cursor: "pointer",
-                        marginLeft: 10,
-                        verticalAlign: "middle",
-                      }}
-                    />
-                  </Tooltip>
-                )}
               </div>
             }
             secondary={
@@ -498,8 +482,6 @@ const TicketListItemCustom = ({ ticket }) => {
                 {/* Se estiver pendente, mostra "ACEITAR" */}
                 {ticket.status === "pending" && (
                   <MenuItem
-                    className={classes.acceptButton}
-                    size="small"
                     loading={loading}
                     onClick={() => handleAcepptTicket(ticket.id)}
                   >
@@ -509,8 +491,6 @@ const TicketListItemCustom = ({ ticket }) => {
                 {/* Se não estiver fechado, mostra "FINALIZAR" */}
                 {ticket.status !== "closed" && (
                   <MenuItem
-                    className={classes.acceptButton}
-                    size="small"
                     loading={loading}
                     onClick={() => handleCloseTicket(ticket.id)}
                   >
@@ -521,19 +501,32 @@ const TicketListItemCustom = ({ ticket }) => {
                 {/* Se estiver fechado, mostra "REABRIR" */}
                 {ticket.status === "closed" && (
                   <MenuItem
-                    className={classes.acceptButton}
-                    size="small"
                     loading={loading}
                     onClick={() => handleReopenTicket(ticket.id)}
                   >
                     REABRIR
                   </MenuItem>
                 )}
-                {/* {options.map((option) => (
-                  <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-                    {option}
+                {/* Ícone de espiar conversa, se for admin */}
+                {profile === "admin" && (
+                  <MenuItem
+                  onClick={() => setOpenTicketMessageDialog(true)}
+                  >
+                    Espiar Conversa
                   </MenuItem>
-                ))} */}
+                  // <Tooltip title="Espiar Conversa">
+                  //   <VisibilityIcon
+                  //     onClick={() => setOpenTicketMessageDialog(true)}
+                  //     fontSize="small"
+                  //     style={{
+                  //       color: blue[700],
+                  //       cursor: "pointer",
+                  //       marginLeft: 10,
+                  //       verticalAlign: "middle",
+                  //     }}
+                  //   />
+                  // </Tooltip>
+                )}
               </Menu>
             </div>
             
