@@ -72,8 +72,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 5,
     fontSize: "0.9rem",
     overflow: 'hidden',
-    display: 'grid',
-    gridTemplateColumns: 'auto 80px'
+    display: 'flex',
+    justifyContent: 'space-between'
   },
   newMessagesCount: {
     position: "absolute",
