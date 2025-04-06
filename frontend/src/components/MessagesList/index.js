@@ -24,7 +24,7 @@ import {
 import MarkdownWrapper from "../MarkdownWrapper";
 import ModalImageCors from "../ModalImageCors";
 import MessageOptionsMenu from "../MessageOptionsMenu";
-import whatsBackground from "../../assets/bg-1.png";//"../../assets/wa-background.png";
+import whatsBackground from "../../assets/wpp-bg.png"//"../../assets/wa-background.png";
 import LocationPreview from "../LocationPreview";
 import whatsBackgroundDark from "../../assets/wa-background-dark.png"; //DARK MODE PLW DESIGN//
 import VCardPreview from "../VCardPreview";
