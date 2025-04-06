@@ -359,13 +359,16 @@ const TicketListItemCustom = ({ ticket }) => {
           ></span>
         </Tooltip>
 
-        <ListItem>
+        <ListItem
+          disableGutters
+        >
 
           {/* Avatar do contato */}
           <ListItemAvatar>
             <Avatar
               style={{
                 marginLeft: 10,
+                marginRigh: 1,
                 width: 48,
                 height: 48,
                 borderRadius: 8,
@@ -378,7 +381,7 @@ const TicketListItemCustom = ({ ticket }) => {
           <ListItemText
             disableTypography
             secondaryTypographyProps={{
-              padding: 0
+              paddingLeft: 0
             }}
             primary={
               <div className={classes.contactNameWrapper}>
