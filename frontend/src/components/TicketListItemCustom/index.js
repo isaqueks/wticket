@@ -380,7 +380,7 @@ const TicketListItemCustom = ({ ticket }) => {
             <Avatar
               style={{
                 marginLeft: 10,
-                marginRight: 1,
+                marginRight: 8,
                 width: 52,
                 height: 52,
                 borderRadius: 8,
