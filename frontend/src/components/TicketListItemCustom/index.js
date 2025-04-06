@@ -1077,9 +1077,9 @@ const TicketListItemCustom = ({ ticket }) => {
               )}
             </div>
           }
-          secondary={
-            secondary
-          }
+          // secondary={
+          //   // secondary
+          // }
         />
 
         {/* Horário da última mensagem no canto superior direito */}
