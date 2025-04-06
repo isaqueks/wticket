@@ -368,8 +368,8 @@ const TicketListItemCustom = ({ ticket }) => {
               style={{
                 marginLeft: 10,
                 marginRigh: 1,
-                width: 48,
-                height: 48,
+                width: 52,
+                height: 52,
                 borderRadius: 8,
               }}
               src={ticket?.contact?.profilePicUrl}
