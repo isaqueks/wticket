@@ -106,8 +106,7 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
   },
   lastMessageTime: {
-    background: "#333",
-    color: "#fff",
+    color: "#333",
     borderRadius: 5,
     padding: "3px 8px",
     fontSize: "0.8rem",
