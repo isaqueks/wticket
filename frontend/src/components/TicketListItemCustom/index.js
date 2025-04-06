@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 90,
     "&:hover": {
       backgroundColor: "#f9f9f9",
+      cursor: "pointer"
     },
   },
   pendingTicket: {
@@ -70,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
   contactLastMessage: {
     marginLeft: 5,
     fontSize: "0.9rem",
-    maxWidth: '120px',
     overflow: 'hidden',
     display: 'inline-block'
   },
@@ -109,7 +109,6 @@ const useStyles = makeStyles((theme) => ({
     color: "#333",
     borderRadius: 5,
     padding: "3px 8px",
-    fontSize: "0.8rem",
     position: "absolute",
     right: 16,
     top: 16,
@@ -367,7 +366,7 @@ const TicketListItemCustom = ({ ticket }) => {
             <Avatar
               style={{
                 marginLeft: 10,
-                marginRigh: 1,
+                marginRight: 1,
                 width: 52,
                 height: 52,
                 borderRadius: 8,
