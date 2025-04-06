@@ -320,6 +320,7 @@ const TicketListItemCustom = ({ ticket }) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = (e) => {
+    e.stopPropagation();
     setAnchorEl(null);
   };
 
