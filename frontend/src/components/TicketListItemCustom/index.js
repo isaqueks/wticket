@@ -485,7 +485,7 @@ const TicketListItemCustom = ({ ticket }) => {
                 {ticket.status === "pending" && (
                   <MenuItem
                     loading={loading}
-                    onClick={() => handleAcepptTicket(ticket.id)}
+                    onClick={(e) => (e.stopPropagation(),handleAcepptTicket(ticket.id))}
                   >
                     Aceitar Atendimento
                   </MenuItem>
@@ -494,7 +494,7 @@ const TicketListItemCustom = ({ ticket }) => {
                 {ticket.status !== "closed" && (
                   <MenuItem
                     loading={loading}
-                    onClick={() => handleCloseTicket(ticket.id)}
+                    onClick={(e) => (e.stopPropagation(),handleCloseTicket(ticket.id))}
                   >
                     Finalizar Atendimento
                   </MenuItem>
@@ -504,7 +504,7 @@ const TicketListItemCustom = ({ ticket }) => {
                 {ticket.status === "closed" && (
                   <MenuItem
                     loading={loading}
-                    onClick={() => handleReopenTicket(ticket.id)}
+                    onClick={(e) => (e.stopPropagation(),handleReopenTicket(ticket.id))}
                   >
                     Reabrir Atendimento
                   </MenuItem>
@@ -512,7 +512,7 @@ const TicketListItemCustom = ({ ticket }) => {
                 {/* Ícone de espiar conversa, se for admin */}
                 {profile === "admin" && (
                   <MenuItem
-                  onClick={() => setOpenTicketMessageDialog(true)}
+                  onClick={(e) => (e.stopProgapation(),setOpenTicketMessageDialog(true))}
                   >
                     Espiar Conversa
                   </MenuItem>
