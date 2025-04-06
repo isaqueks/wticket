@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
   contactLastMessage: {
     marginLeft: 5,
     fontSize: "0.9rem",
+    maxWidth: '140px',
     overflow: 'hidden',
     display: 'inline-block'
   },
@@ -421,24 +422,24 @@ const TicketListItemCustom = ({ ticket }) => {
                   ) : (
                     <MarkdownWrapper>---</MarkdownWrapper>
                   )}
+                  
+                  {/* Horário da última mensagem no canto superior direito */}
+                  {ticket.lastMessage && (
+                    <Typography
+                      className={classes.lastMessageTime}
+                      component="span"
+                      variant="body2"
+                      color="textSecondary"
+                    >
+                      {isSameDay(parseISO(ticket.updatedAt), new Date())
+                        ? format(parseISO(ticket.updatedAt), "HH:mm")
+                        : format(parseISO(ticket.updatedAt), "dd/MM/yyyy")}
+                    </Typography>
+                  )}
                 </Typography>
               </>
             }
           />
-
-          {/* Horário da última mensagem no canto superior direito */}
-          {ticket.lastMessage && (
-            <Typography
-              className={classes.lastMessageTime}
-              component="span"
-              variant="body2"
-              color="textSecondary"
-            >
-              {isSameDay(parseISO(ticket.updatedAt), new Date())
-                ? format(parseISO(ticket.updatedAt), "HH:mm")
-                : format(parseISO(ticket.updatedAt), "dd/MM/yyyy")}
-            </Typography>
-          )}
 
           {/* Ações à direita */}
           <ListItemSecondaryAction>
