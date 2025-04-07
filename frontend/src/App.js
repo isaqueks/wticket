@@ -11,6 +11,8 @@ import { SocketContext, SocketManager } from './context/Socket/SocketContext';
 
 import Routes from "./routes";
 
+import './App.css';
+
 const queryClient = new QueryClient();
 
 const App = () => {
