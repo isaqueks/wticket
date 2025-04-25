@@ -157,7 +157,7 @@ const typebotListener = async ({
                                 let text = '';
 
                                 if (element.text) {
-                                    text = element.text+'\n';
+                                    text = element.text;
                                 }
                                 if (element.type && element.children) {
                                     for (const subelement of element.children) {
@@ -165,6 +165,9 @@ const typebotListener = async ({
 
                                         if (subelement.text) {
                                             text = subelement.text;
+                                        }
+                                        if (subelement.type === 'variable') {
+                                            text += '\n';
                                         }
 
                                         if (subelement.type && subelement.children) {
