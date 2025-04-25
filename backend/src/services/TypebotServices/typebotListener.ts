@@ -162,6 +162,9 @@ const typebotListener = async ({
                                 if (richText.type === 'variable') {
                                     text += '\n';
                                 }
+                                if (richText.type === 'blockquote') {
+                                    text = `> ${text}`;
+                                }
                                 if (element.type && element.children) {
                                     for (const subelement of element.children) {
                                         let text = '';
@@ -171,6 +174,9 @@ const typebotListener = async ({
                                         }
                                         if (element.type === 'variable') {
                                             text += '\n';
+                                        }
+                                        if (element.type === 'blockquote') {
+                                            text = `> ${text}`;
                                         }
 
                                         if (subelement.type && subelement.children) {
@@ -182,6 +188,9 @@ const typebotListener = async ({
                                                 }
                                                 if (subelement.type === 'variable') {
                                                     text += '\n';
+                                                }
+                                                if (subelement.type === 'blockquote') {
+                                                    text = `> ${text}`;
                                                 }
 
                                                 if (subelement2.bold) {
