@@ -159,6 +159,9 @@ const typebotListener = async ({
                                 if (element.text) {
                                     text = element.text;
                                 }
+                                if (richText.type === 'variable') {
+                                    text += '\n';
+                                }
                                 if (element.type && element.children) {
                                     for (const subelement of element.children) {
                                         let text = '';
@@ -176,6 +179,9 @@ const typebotListener = async ({
 
                                                 if (subelement2.text) {
                                                     text = subelement2.text;
+                                                }
+                                                if (subelement.type === 'variable') {
+                                                    text += '\n';
                                                 }
 
                                                 if (subelement2.bold) {
