@@ -166,7 +166,7 @@ const typebotListener = async ({
                                         if (subelement.text) {
                                             text = subelement.text;
                                         }
-                                        if (subelement.type === 'variable') {
+                                        if (element.type === 'variable') {
                                             text += '\n';
                                         }
 
