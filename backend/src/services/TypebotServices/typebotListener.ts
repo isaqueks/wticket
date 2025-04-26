@@ -6,6 +6,7 @@ import { getBodyMessage } from "../WbotServices/wbotMessageListener";
 import { logger } from "../../utils/logger";
 import { isNil } from "lodash";
 import UpdateTicketService from "../TicketServices/UpdateTicketService";
+import ListQueuesService from "../QueueService/ListQueuesService";
 
 
 type Session = WASocket & {
@@ -19,6 +20,18 @@ interface Request {
     typebot: QueueIntegrations;
 }
 
+
+const transferQueue = async (
+    queueId: number,
+    ticket: Ticket,
+  ): Promise<void> => {
+    await UpdateTicketService({
+      ticketData: { queueId: queueId, useIntegration: false, promptId: null },
+      ticketId: ticket.id,
+      companyId: ticket.companyId
+    });
+  };
+  
 
 const typebotListener = async ({
     wbot,
@@ -117,6 +130,7 @@ const typebotListener = async ({
         //let body = getConversationMessage(msg);
 
         let finish = false;
+        let transfer = false;
 
         if (body !== typebotKeywordFinish && body !== typebotKeywordRestart) {
             let requestContinue
@@ -314,7 +328,11 @@ const typebotListener = async ({
                         console.log(formattedText)
                         if (formattedText.trim().includes('\\FINISH')) {
                             finish = true;
-                            formattedText = formattedText.replace('\\FINISH', '');
+                            formattedText = formattedText.replace('\\FINISH', '').trim();
+                        }
+                        else if (formattedText.trim().includes('\\TRANSFER')) {
+                            transfer = true;
+                            formattedText = formattedText.replace('\\TRANSFER', '').trim();
                         }
                         await wbot.sendMessage(msg.key.remoteJid, { text: formattedText });
                     }
@@ -437,6 +455,24 @@ const typebotListener = async ({
                 ticketId: ticket.id,
                 companyId: ticket.companyId
             })
+        }
+        if (transfer) {
+            const queues = await ListQueuesService({ companyId: typebot.companyId });
+            const q = queues.find(q => q.name.toLowerCase() == 'atendente') || queues.find(q => !q.integrationId);
+            if (!q) {
+                await UpdateTicketService({
+                    ticketData: {
+                        status: "closed",
+                        useIntegration: false,
+                        integrationId: null                   
+                    },
+                    ticketId: ticket.id,
+                    companyId: ticket.companyId
+                })
+            }
+            else {
+                await transferQueue(q.id, ticket);
+            }
         }
     } catch (error) {
         logger.info("Error on typebotListener: ", error);
