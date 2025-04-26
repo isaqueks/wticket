@@ -464,14 +464,23 @@ const typebotListener = async ({
                     ticketData: {
                         status: "closed",
                         useIntegration: false,
-                        integrationId: null                   
+                        integrationId: null,
                     },
                     ticketId: ticket.id,
                     companyId: ticket.companyId
                 })
             }
             else {
-                await transferQueue(q.id, ticket);
+                await UpdateTicketService({
+                    ticketData: {
+                        status: "pending",
+                        useIntegration: false,
+                        integrationId: null,
+                        queueId: q.id
+                    },
+                    ticketId: ticket.id,
+                    companyId: ticket.companyId
+                })
             }
         }
     } catch (error) {
