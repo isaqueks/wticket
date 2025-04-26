@@ -116,6 +116,7 @@ const typebotListener = async ({
 
         //let body = getConversationMessage(msg);
 
+        let finish = false;
 
         if (body !== typebotKeywordFinish && body !== typebotKeywordRestart) {
             let requestContinue
@@ -311,6 +312,9 @@ const typebotListener = async ({
 
 
                         console.log(formattedText)
+                        if (formattedText.trim().includes('\\FINISH')) {
+                            finish = true;
+                        }
                         await wbot.sendMessage(msg.key.remoteJid, { text: formattedText });
                     }
 
@@ -420,6 +424,18 @@ const typebotListener = async ({
             })
 
             return;
+        }
+
+        if (finish) {
+            await UpdateTicketService({
+                ticketData: {
+                    status: "closed",
+                    useIntegration: false,
+                    integrationId: null                   
+                },
+                ticketId: ticket.id,
+                companyId: ticket.companyId
+            })
         }
     } catch (error) {
         logger.info("Error on typebotListener: ", error);
