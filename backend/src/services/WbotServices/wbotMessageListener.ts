@@ -1199,7 +1199,7 @@ const verifyQueue = async (
         textMessage
       );
       lastMsg ?? (lastMsg = {});
-      lastMsg.invalid_option = true;
+      // lastMsg.invalid_option = true;
       lastMsg.msg = textMessage.text;
       map_msg.set(contact.number, lastMsg);
       await verifyMessage(sendMsg, ticket, ticket.contact);
