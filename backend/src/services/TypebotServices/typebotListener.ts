@@ -314,6 +314,7 @@ const typebotListener = async ({
                         console.log(formattedText)
                         if (formattedText.trim().includes('\\FINISH')) {
                             finish = true;
+                            formattedText = formattedText.replace('\\FINISH', '');
                         }
                         await wbot.sendMessage(msg.key.remoteJid, { text: formattedText });
                     }
