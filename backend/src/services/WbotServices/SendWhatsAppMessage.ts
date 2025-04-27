@@ -6,7 +6,6 @@ import Message from "../../models/Message";
 import Ticket from "../../models/Ticket";
 
 import formatBody from "../../helpers/Mustache";
-import { map_msg } from "../../utils/global";
 
 interface Request {
   body: string;
@@ -48,7 +47,6 @@ const SendWhatsAppMessage = async ({
 
   try {
     console.log('body:::::::::::::::::::::::::::', body)
-    map_msg.set(ticket.contact.number, { lastSystemMsg: body })
     console.log('lastSystemMsg:::::::::::::::::::::::::::', ticket.contact.number)
     const sentMessage = await wbot.sendMessage(number, {
       text: formatBody(body, ticket.contact)

@@ -4,8 +4,6 @@ import { head, isNil } from "lodash";
 import path, { join } from "path";
 import { promisify } from "util";
 
-import { map_msg } from "../../utils/global";
-
 import {
   downloadMediaMessage,
   extractMessageContent,
@@ -1173,7 +1171,15 @@ const verifyQueue = async (
     const textMessage = {
       text: formatBody(`\u200e${greetingMessage}\n\n${options}`, contact),
     };
-    let lastMsg = map_msg.get(contact.number)
+    // let lastMsg = map_msg.get(contact.number)
+    const lastMsg = await Message.findOne({
+      where: {
+        remoteJid: `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`,
+        fromMe: true
+      },
+      order: [["createdAt", "DESC"]],
+      limit: 1
+    })
     let invalidOption = "Opção inválida, por favor, escolha uma opção válida."
     
 
@@ -1181,27 +1187,19 @@ const verifyQueue = async (
     console.log('textMessage2', textMessage)
      console.log("lastMsg::::::::::::':", contact.number, lastMsg)
     // map_msg.set(contact.number, lastMsg);
-    if (!lastMsg?.msg || getBodyMessage(msg).includes('#') || textMessage.text === 'concluido' || lastMsg.msg !== textMessage.text && !lastMsg.invalid_option) {
+    if (!lastMsg || getBodyMessage(msg).includes('#') || textMessage.text === 'concluido' || lastMsg.body !== textMessage.text) {
       const sendMsg = await wbot.sendMessage(
         `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`,
         textMessage
       );
-      lastMsg ?? (lastMsg = {});
-      lastMsg.msg = textMessage.text;
-      lastMsg.invalid_option = false;
-      map_msg.set(contact.number, lastMsg);
       await verifyMessage(sendMsg, ticket, ticket.contact);
 
-    } else if (lastMsg.msg !== invalidOption && !lastMsg.invalid_option) {
+    } else if (lastMsg.body !== invalidOption) {
       textMessage.text = invalidOption
       const sendMsg = await wbot.sendMessage(
         `${contact.number}@${ticket.isGroup ? "g.us" : "s.whatsapp.net"}`,
         textMessage
       );
-      lastMsg ?? (lastMsg = {});
-      // lastMsg.invalid_option = true;
-      lastMsg.msg = textMessage.text;
-      map_msg.set(contact.number, lastMsg);
       await verifyMessage(sendMsg, ticket, ticket.contact);
     }
 
