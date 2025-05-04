@@ -62,8 +62,6 @@ interface TeamConnectProvisioningPayload {
 export const create = async (req: Request, res: Response): Promise<Response> => {
   const newCompany: TeamConnectProvisioningPayload = req.body;
 
-  console.log(JSON.stringify(newCompany, null, 2))
-
   const plan = await Plan.findOne({
     where: {
       name: newCompany.plan
@@ -79,7 +77,7 @@ export const create = async (req: Request, res: Response): Promise<Response> => 
     email: newCompany.clientEmail,
     planId: plan.id,
     dueDate: moment(new Date(2099, 0, 1)).format("YYYY-MM-DD"),
-    whmcsId: newCompany.clientId+'',
+    whmcsId: newCompany.clientId,
     password: newCompany.password,
   });
 

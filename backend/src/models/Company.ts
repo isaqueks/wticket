@@ -9,7 +9,8 @@ import {
   ForeignKey,
   BelongsTo,
   DataType,
-  HasMany
+  HasMany,
+  Unique
 } from "sequelize-typescript";
 import Contact from "./Contact";
 import Message from "./Message";
@@ -56,6 +57,9 @@ class Company extends Model<Company> {
   @ForeignKey(() => Plan)
   @Column
   planId: number;
+
+  @Column
+  whmcsId: number;
 
   @BelongsTo(() => Plan)
   plan: Plan;

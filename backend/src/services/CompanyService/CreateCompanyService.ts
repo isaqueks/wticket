@@ -14,7 +14,7 @@ interface CompanyData {
   campaignsEnabled?: boolean;
   dueDate?: string;
   recurrence?: string;
-  whmcsId?: string;
+  whmcsId?: number;
 }
 
 const CreateCompanyService = async (
