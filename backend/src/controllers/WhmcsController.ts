@@ -93,7 +93,7 @@ export const suspend = async (
 
   let comp = await Company.findOne({
     where: {
-      whmcsId: data.serviceId
+      whmcsId: data.clientId
     }
   });
   if (!comp) {
@@ -115,7 +115,7 @@ export const unsuspend = async (
 
   let comp = await Company.findOne({
     where: {
-      whmcsId: data.serviceId
+      whmcsId: data.clientId
     }
   });
   if (!comp) {
