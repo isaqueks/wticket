@@ -60,16 +60,6 @@ interface TeamConnectProvisioningPayload {
 export const create = async (req: Request, res: Response): Promise<Response> => {
   const newCompany: TeamConnectProvisioningPayload = req.body;
 
-  const schema = Yup.object().shape({
-    name: Yup.string().required()
-  });
-
-  try {
-    await schema.validate(newCompany);
-  } catch (err: any) {
-    throw new AppError(err.message);
-  }
-
   const plan = await Plan.findOne({
     where: {
       name: newCompany.plan
