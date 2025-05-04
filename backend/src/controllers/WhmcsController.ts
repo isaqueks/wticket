@@ -54,7 +54,8 @@ interface TeamConnectProvisioningPayload {
   usuarios: number;          // Quantidade de usuários permitidos
   numeros: number;           // Quantidade de números WhatsApp
   integracaoTypeBot: boolean;// Se tem integração com TypeBot
-  suporte: 'básico' | 'premium'; // Tipo de suporte
+  suporte: 'básico' | 'premium'; // Tipo de suporte,
+  password: string;         // Senha do cliente
 }
 
 
@@ -77,6 +78,7 @@ export const create = async (req: Request, res: Response): Promise<Response> => 
     planId: plan.id,
     dueDate: moment(new Date(2099, 0, 1)).format("YYYY-MM-DD"),
     whmcsId: newCompany.clientId+'',
+    password: newCompany.password,
   });
 
   return res.status(200).json(company);
