@@ -17,6 +17,7 @@ import ShowPlanCompanyService from "../services/CompanyService/ShowPlanCompanySe
 import UpdateCompanyService from "../services/CompanyService/UpdateCompanyService";
 import UpdateSchedulesService from "../services/CompanyService/UpdateSchedulesService";
 import Plan from "../models/Plan";
+import moment from "moment";
 
 // type IndexQuery = {
 //   searchParam: string;
@@ -74,7 +75,7 @@ export const create = async (req: Request, res: Response): Promise<Response> => 
     name: newCompany.clientName,
     email: newCompany.clientEmail,
     planId: plan.id,
-    dueDate: new Date(2099, 0, 1)+'',
+    dueDate: moment(new Date(2099, 0, 1)).format("YYYY-MM-DD"),
     whmcsId: newCompany.clientId+'',
   });
 
@@ -121,7 +122,7 @@ export const suspend = async (
     throw new AppError("ERR_COMPANY_NOT_FOUND");
   }
 
-  comp.dueDate = new Date(2000, 0, 1)+'';
+  comp.dueDate = moment(new Date(2000, 0, 1)).format("YYYY-MM-DD");
 
   comp = await comp.save();
 
@@ -143,7 +144,7 @@ export const unsuspend = async (
     throw new AppError("ERR_COMPANY_NOT_FOUND");
   }
 
-  comp.dueDate = new Date(2099, 0, 1)+'';
+  comp.dueDate = moment(new Date(2099, 0, 1)).format("YYYY-MM-DD");
 
   comp = await comp.save();
 
