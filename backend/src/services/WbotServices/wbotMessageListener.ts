@@ -1185,7 +1185,6 @@ const verifyQueue = async (
 
     // console.log('getBodyMessage(msg)', getBodyMessage(msg))
     console.log('textMessage2', textMessage)
-     console.log("lastMsg::::::::::::':", contact.number, lastMsg)
     // map_msg.set(contact.number, lastMsg);
     if (!lastMsg || getBodyMessage(msg).includes('#') || textMessage.text === 'concluido' || lastMsg.body !== textMessage.text) {
       const sendMsg = await wbot.sendMessage(
