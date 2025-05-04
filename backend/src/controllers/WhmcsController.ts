@@ -62,6 +62,8 @@ interface TeamConnectProvisioningPayload {
 export const create = async (req: Request, res: Response): Promise<Response> => {
   const newCompany: TeamConnectProvisioningPayload = req.body;
 
+  console.log(JSON.stringify(newCompany, null, 2))
+
   const plan = await Plan.findOne({
     where: {
       name: newCompany.plan
@@ -83,30 +85,6 @@ export const create = async (req: Request, res: Response): Promise<Response> => 
 
   return res.status(200).json(company);
 };
-
-
-// export const update = async (
-//   req: Request,
-//   res: Response
-// ): Promise<Response> => {
-//   const companyData: CompanyData = req.body;
-
-//   const schema = Yup.object().shape({
-//     name: Yup.string()
-//   });
-
-//   try {
-//     await schema.validate(companyData);
-//   } catch (err: any) {
-//     throw new AppError(err.message);
-//   }
-
-//   const { id } = req.params;
-
-//   const company = await UpdateCompanyService({ id, ...companyData });
-
-  // return res.status(200).json(company);
-// };
 
 
 export const suspend = async (
