@@ -3,9 +3,9 @@ import * as WhmcsController from "../controllers/WhmcsController"
 
 const whmcsRoutes = express.Router();
 
-whmcsRoutes.get("/whmcs/create", WhmcsController.create);
-whmcsRoutes.get("/whmcs/suspend", WhmcsController.suspend);
-whmcsRoutes.get("/whmcs/unsuspend", WhmcsController.unsuspend);
-whmcsRoutes.get("/whmcs/terminate", WhmcsController.suspend);
+whmcsRoutes.post("/whmcs/create", WhmcsController.create);
+whmcsRoutes.post("/whmcs/suspend", WhmcsController.suspend);
+whmcsRoutes.post("/whmcs/unsuspend", WhmcsController.unsuspend);
+whmcsRoutes.post("/whmcs/terminate", WhmcsController.suspend);
 
 export default whmcsRoutes;
